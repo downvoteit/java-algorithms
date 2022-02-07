@@ -46,4 +46,3 @@
 - Longest Common Substring
 - Topological Sort (Graph)
 - Kth Smallest Number
-# java-algorithms
