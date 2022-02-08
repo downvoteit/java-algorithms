@@ -5,7 +5,7 @@ public class SingleNumber {
     return singleNumberV1(nums);
   }
 
-  // XOR Time O(1) Space O(1)
+  // xor time O(1) space O(1)
   private int singleNumberV1(int[] nums) {
     int num = 0;
 

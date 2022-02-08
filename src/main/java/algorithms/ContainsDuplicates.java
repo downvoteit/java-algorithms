@@ -7,7 +7,7 @@ public class ContainsDuplicates {
     return containsDuplicateV4(nums);
   }
 
-  // Arrays Time O(n) Space O(n)
+  // arrays time O(n) space O(n)
   private boolean containsDuplicateV4(int[] nums) {
     Set<Integer> set = new HashSet<>();
     int buffer = 10;

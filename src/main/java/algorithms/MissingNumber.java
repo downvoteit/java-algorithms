@@ -5,20 +5,20 @@ public class MissingNumber {
     return missingNumberV2(nums);
   }
 
-  // XOR Time O(n) Space O(1)
-  // Example {3, 0, 1}, 2
+  // xor time O(n) space O(1)
+  // example {3, 0, 1}, 2
   // 3 ^ (0 ^ 0) ^ (1 ^ 1) ^ (2 ^ 3) =
   // 2 ^ (0 ^ 0) ^ (1 ^ 1) ^ (3 ^ 3) =
   // 2 ^ 0 ^ 0 ^ 0 =
   // 2
-  public int missingNumberV2(int[] nums) {
+  private int missingNumberV2(int[] nums) {
     int num = nums.length;
     for (int i = 0; i < nums.length; i++) num ^= i ^ nums[i];
 
     return num;
   }
 
-  // XOR Time O(n) Space O(1)
+  // xor time O(n) space O(1)
   private int missingNumberV1(int[] nums) {
     int x1 = 1, x2 = nums[0];
     int len = nums.length + 1;

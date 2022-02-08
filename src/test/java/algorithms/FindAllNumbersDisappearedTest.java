@@ -23,11 +23,11 @@ class FindAllNumbersDisappearedTest {
   @ParameterizedTest
   @MethodSource("source")
   public void positive(int[] nums, int[] expected) {
-    List<Integer> got = new FindAllNumbersDisappeared().findDisappearedNumbers(nums);
+    List<Integer> actual = new FindAllNumbersDisappeared().findDisappearedNumbers(nums);
 
     int expectedValue = Arrays.stream(expected).sum();
-    int gotValue = got.stream().mapToInt(o -> o).sum();
+    int actualValue = actual.stream().mapToInt(o -> o).sum();
 
-    Assertions.assertEquals(expectedValue, gotValue);
+    Assertions.assertEquals(expectedValue, actualValue);
   }
 }

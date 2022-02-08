@@ -9,18 +9,15 @@ import java.util.stream.Stream;
 
 import static org.junit.jupiter.params.provider.Arguments.arguments;
 
-class MissingNumberTest {
+class ClimbingStairsTest {
   static Stream<Arguments> source() {
-    return Stream.of(
-        arguments(new int[] {3, 0, 1}, 2),
-        arguments(new int[] {0, 1}, 2),
-        arguments(new int[] {9, 6, 4, 2, 3, 5, 7, 0, 1}, 8));
+    return Stream.of(arguments(2, 2), arguments(3, 3));
   }
 
   @ParameterizedTest
   @MethodSource("source")
-  public void positive(int[] nums, int expected) {
-    int actual = new MissingNumber().missingNumber(nums);
+  public void positive(int n, int expected) {
+    int actual = new ClimbingStairs().climbStairs(n);
 
     Assertions.assertEquals(expected, actual);
   }

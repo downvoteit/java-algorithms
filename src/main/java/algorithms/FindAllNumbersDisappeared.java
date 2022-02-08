@@ -9,7 +9,7 @@ public class FindAllNumbersDisappeared {
     return findDisappearedNumbersV1(nums);
   }
 
-  // Binary Search Time O(n) Space O(1)
+  // binary search time O(n) space O(1)
   private List<Integer> findDisappearedNumbersV1(int[] nums) {
     List<Integer> list = new ArrayList<>();
 

@@ -5,23 +5,24 @@ import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.Arguments;
 import org.junit.jupiter.params.provider.MethodSource;
 
+import java.util.Arrays;
 import java.util.stream.Stream;
 
 import static org.junit.jupiter.params.provider.Arguments.arguments;
 
-class MissingNumberTest {
+class CountingBitsTest {
   static Stream<Arguments> source() {
-    return Stream.of(
-        arguments(new int[] {3, 0, 1}, 2),
-        arguments(new int[] {0, 1}, 2),
-        arguments(new int[] {9, 6, 4, 2, 3, 5, 7, 0, 1}, 8));
+    return Stream.of(arguments(2, new int[] {0, 1, 1}), arguments(5, new int[] {0, 1, 1, 2, 1, 2}));
   }
 
   @ParameterizedTest
   @MethodSource("source")
-  public void positive(int[] nums, int expected) {
-    int actual = new MissingNumber().missingNumber(nums);
+  public void positive(int n, int[] expected) {
+    int[] actual = new CountingBits().countBits(n);
 
-    Assertions.assertEquals(expected, actual);
+    int expectedValue = Arrays.stream(expected).sum();
+    int actualValue = Arrays.stream(actual).sum();
+
+    Assertions.assertEquals(actualValue, expectedValue);
   }
 }

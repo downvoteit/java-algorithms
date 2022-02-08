@@ -8,7 +8,7 @@ public class TwoSum {
     return twoSumV2(nums, target);
   }
 
-  // HashTable Time O(n) Space O(n)
+  // hash table time O(n) space O(n)
   private int[] twoSumV2(int[] nums, int target) {
     Map<Integer, Integer> map = new HashMap<>();
 
@@ -23,8 +23,8 @@ public class TwoSum {
     return new int[] {-1, -1};
   }
 
-  // Two Pointers Time O(n) Space O(1)
-  public int[] twoSumV1(int[] nums, int target) { // Unpredictable for unsorted arrays
+  // two pointers time O(n) space O(1)
+  private int[] twoSumV1(int[] nums, int target) { // unpredictable for unsorted arrays
     int left = 0, right = nums.length - 1;
 
     while (left < right) {

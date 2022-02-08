@@ -21,8 +21,8 @@ class SingleNumberTest {
   @ParameterizedTest
   @MethodSource("source")
   public void positive(int[] nums, int expected) {
-    int got = new SingleNumber().singleNumber(nums);
+    int actual = new SingleNumber().singleNumber(nums);
 
-    Assertions.assertEquals(expected, got);
+    Assertions.assertEquals(expected, actual);
   }
 }
