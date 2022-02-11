@@ -6,7 +6,6 @@ public class LongestSubsequenceRepeatedKTimes {
   }
 
   static class V1 extends LongestSubsequenceRepeatedKTimes {
-
     public String longestSubsequenceRepeatedK(String s, int k) {
       return null;
     }

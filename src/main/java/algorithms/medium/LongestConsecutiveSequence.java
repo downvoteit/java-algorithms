@@ -9,7 +9,7 @@ public class LongestConsecutiveSequence {
   }
 
   static class V1 extends LongestConsecutiveSequence {
-    // time O(n*k) space O(n) check for previous/next elements
+    // sets time O(n*k) space O(n) check for previous/next elements
     public int longestConsecutive(int[] nums) {
       int longest = 0;
 

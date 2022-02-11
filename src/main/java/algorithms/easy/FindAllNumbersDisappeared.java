@@ -11,7 +11,6 @@ public class FindAllNumbersDisappeared {
 
   static class V1 extends FindAllNumbersDisappeared {
     // binary search time O(n) space O(1)
-
     public List<Integer> findDisappearedNumbers(int[] nums) {
       List<Integer> list = new ArrayList<>();
 

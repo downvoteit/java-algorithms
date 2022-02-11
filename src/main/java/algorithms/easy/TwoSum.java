@@ -8,8 +8,8 @@ public class TwoSum {
     return new V2().twoSum(nums, target);
   }
 
-  static class V2 extends TwoSum { // hash table time O(n) space O(n)
-
+  static class V2 extends TwoSum {
+    // hash table time O(n) space O(n)
     public int[] twoSum(int[] nums, int target) {
       Map<Integer, Integer> map = new HashMap<>();
 
@@ -25,8 +25,8 @@ public class TwoSum {
     }
   }
 
-  static class V1 extends TwoSum { // two pointers time O(n) space O(1)
-
+  static class V1 extends TwoSum {
+    // two pointers time O(n) space O(1)
     public int[] twoSum(int[] nums, int target) { // unpredictable for unsorted arrays
       int left = 0, right = nums.length - 1;
 

@@ -8,7 +8,7 @@ public class ContainsDuplicates {
   }
 
   static class V1 extends ContainsDuplicates {
-
+    // map time O(n) space O(n)
     public boolean containsDuplicate(int[] nums) {
       Map<Integer, Integer> map = new HashMap<>();
 
@@ -25,7 +25,7 @@ public class ContainsDuplicates {
   }
 
   static class V3 extends ContainsDuplicates {
-
+    // sets binary search time O(n) space O(n)
     public boolean containsDuplicate(int[] nums) {
       Set<Integer> set = new HashSet<>();
 
@@ -40,6 +40,7 @@ public class ContainsDuplicates {
   }
 
   static class V2 extends ContainsDuplicates {
+    // binary search time O(n) space O(n)
     public boolean containsDuplicate(int[] nums) {
       Arrays.sort(nums);
 

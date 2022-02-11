@@ -7,7 +7,6 @@ public class FibonacciNumbers {
 
   static class V2 extends FibonacciNumbers {
     // recursion top-down memoization time O(2^n) space O(n)
-
     public int calculate(int n) {
       int[] arr = new int[n];
 
@@ -40,7 +39,6 @@ public class FibonacciNumbers {
     // (3F + 2F) + (2F + 1) =
     // ((2F + 1) + (1 + 0)) + ((1 + 0) + 1) =
     // (1 + 1 + 1) + (1 + 1) = 5
-
     public int calculate(int n) {
       if (n < 2) {
         return n;
@@ -52,7 +50,6 @@ public class FibonacciNumbers {
 
   static class V4 extends FibonacciNumbers {
     // iterative bottom-up tabulation O(n) space O(1)
-
     public int calculate(int n) {
       if (n < 2) {
         return n;
@@ -71,7 +68,6 @@ public class FibonacciNumbers {
 
   static class V3 extends FibonacciNumbers {
     // iterative bottom-up tabulation time O(n) space O(n)
-
     public int calculate(int n) {
       if (n < 2) {
         return n;

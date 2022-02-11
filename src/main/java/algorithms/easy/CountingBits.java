@@ -8,7 +8,7 @@ public class CountingBits {
   }
 
   static class V4 extends CountingBits {
-
+    // arrays O(n) space O(1)
     public int[] countBits(int num) {
       int[] arr = new int[num + 1];
 
@@ -23,7 +23,7 @@ public class CountingBits {
   }
 
   static class V3 extends CountingBits {
-
+    // arrays bit masking time O(n^2) space O(1)
     public int[] countBits(int n) {
       int[] arr = new int[n + 1];
 
@@ -41,7 +41,7 @@ public class CountingBits {
   }
 
   static class V2 extends CountingBits {
-
+    // arrays time O(n) space O(1)
     public int[] countBits(int n) {
       int[] arr = new int[n + 1];
 
@@ -54,7 +54,7 @@ public class CountingBits {
   }
 
   static class V1 extends CountingBits {
-
+    // arrays strings time O(n^2) space O(1)
     public int[] countBits(int n) {
       int[] arr = new int[n + 1];
 

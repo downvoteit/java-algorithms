@@ -12,7 +12,6 @@ public class MissingNumber {
     // 2 ^ (0 ^ 0) ^ (1 ^ 1) ^ (3 ^ 3) =
     // 2 ^ 0 ^ 0 ^ 0 =
     // 2
-
     public int missingNumber(int[] nums) {
       int num = nums.length;
       for (int i = 0; i < nums.length; i++) num ^= i ^ nums[i];
@@ -23,7 +22,6 @@ public class MissingNumber {
 
   static class V1 extends MissingNumber {
     // xor time O(n) space O(1)
-
     public int missingNumber(int[] nums) {
       int x1 = 1, x2 = nums[0];
       int len = nums.length + 1;
