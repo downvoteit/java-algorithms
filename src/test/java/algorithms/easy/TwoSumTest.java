@@ -21,7 +21,7 @@ class TwoSumTest {
 
   @ParameterizedTest
   @MethodSource("source")
-  public void positive(int[] nums, int target, int[] expected) {
+  public void positiveTest(int[] nums, int target, int[] expected) {
     int[] actual = new TwoSum().twoSum(nums, target);
 
     int expectedValue = Arrays.stream(expected).sum();

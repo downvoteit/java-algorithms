@@ -17,7 +17,7 @@ class CountingBitsTest {
 
   @ParameterizedTest
   @MethodSource("source")
-  public void positive(int n, int[] expected) {
+  public void positiveTest(int n, int[] expected) {
     int[] actual = new CountingBits().countBits(n);
 
     int expectedValue = Arrays.stream(expected).sum();

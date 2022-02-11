@@ -20,7 +20,7 @@ class SortAnArrayTest {
 
   @ParameterizedTest
   @MethodSource("source")
-  public void positive(int[] nums, int[] expected) {
+  public void positiveTest(int[] nums, int[] expected) {
     int[] actual = new SortAnArray().sortArray(nums);
 
     int expectedValue = Arrays.stream(expected).sum();
