@@ -16,7 +16,7 @@ class FibonacciNumbersTest {
 
   @ParameterizedTest
   @MethodSource("source")
-  public void positive(int nums, int expected) {
+  public void positiveTest(int nums, int expected) {
     int actual = new FibonacciNumbers().calculate(nums);
 
     Assertions.assertEquals(expected, actual);

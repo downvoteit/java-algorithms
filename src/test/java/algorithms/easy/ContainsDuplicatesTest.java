@@ -20,7 +20,7 @@ class ContainsDuplicatesTest {
 
   @ParameterizedTest
   @MethodSource("source")
-  public void positive(int[] nums, boolean expected) {
+  public void positiveTest(int[] nums, boolean expected) {
     boolean actual = new ContainsDuplicates().containsDuplicate(nums);
 
     Assertions.assertEquals(expected, actual);

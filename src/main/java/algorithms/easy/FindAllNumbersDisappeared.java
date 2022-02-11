@@ -6,21 +6,24 @@ import java.util.List;
 
 public class FindAllNumbersDisappeared {
   public List<Integer> findDisappearedNumbers(int[] nums) {
-    return findDisappearedNumbersV1(nums);
+    return new V1().findDisappearedNumbers(nums);
   }
 
-  // binary search time O(n) space O(1)
-  private List<Integer> findDisappearedNumbersV1(int[] nums) {
-    List<Integer> list = new ArrayList<>();
+  static class V1 extends FindAllNumbersDisappeared {
+    // binary search time O(n) space O(1)
 
-    Arrays.sort(nums);
+    public List<Integer> findDisappearedNumbers(int[] nums) {
+      List<Integer> list = new ArrayList<>();
 
-    for (int i = 1; i <= nums.length; i++) {
-      if (Arrays.binarySearch(nums, i) < 0) {
-        list.add(i);
+      Arrays.sort(nums);
+
+      for (int i = 1; i <= nums.length; i++) {
+        if (Arrays.binarySearch(nums, i) < 0) {
+          list.add(i);
+        }
       }
-    }
 
-    return list;
+      return list;
+    }
   }
 }

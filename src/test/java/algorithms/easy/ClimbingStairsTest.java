@@ -16,7 +16,7 @@ class ClimbingStairsTest {
 
   @ParameterizedTest
   @MethodSource("source")
-  public void positive(int n, int expected) {
+  public void positiveTest(int n, int expected) {
     int actual = new ClimbingStairs().climbStairs(n);
 
     Assertions.assertEquals(expected, actual);

@@ -22,7 +22,7 @@ class FindAllNumbersDisappearedTest {
 
   @ParameterizedTest
   @MethodSource("source")
-  public void positive(int[] nums, int[] expected) {
+  public void positiveTest(int[] nums, int[] expected) {
     List<Integer> actual = new FindAllNumbersDisappeared().findDisappearedNumbers(nums);
 
     int expectedValue = Arrays.stream(expected).sum();
