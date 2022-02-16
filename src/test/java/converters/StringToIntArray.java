@@ -3,7 +3,7 @@ package converters;
 import org.junit.jupiter.params.converter.ArgumentConversionException;
 import org.junit.jupiter.params.converter.SimpleArgumentConverter;
 
-public class ToIntArray extends SimpleArgumentConverter {
+public class StringToIntArray extends SimpleArgumentConverter {
   @Override
   protected int[] convert(Object o, Class<?> aClass) throws ArgumentConversionException {
     if (o == null) {
