@@ -9,7 +9,7 @@ import converters.StringToIntArray;
 class LongestConsecutiveSequenceTest {
   @ParameterizedTest
   @CsvFileSource(
-      resources = "/LongestConsecutiveSequenceTest.tsv",
+      resources = "/medium/LongestConsecutiveSequenceTest.tsv",
       numLinesToSkip = 1,
       delimiter = ';')
   public void positive(@ConvertWith(StringToIntArray.class) int[] nums, int expected) {
