@@ -1,4 +1,4 @@
-# java-algorithms
+# java-problems
 
 ## Purpose 
 
