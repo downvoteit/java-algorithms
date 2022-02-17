@@ -1,5 +1,4 @@
 package implementations;
 
 // https://www.baeldung.com/java-radix-sort
-public class RadixSort {
-}
+public class RadixSort {}

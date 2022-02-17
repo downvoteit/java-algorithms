@@ -1,4 +1,3 @@
 package implementations;
 
-public class HashMap {
-}
+public class HashMap {}

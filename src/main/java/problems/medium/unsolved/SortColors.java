@@ -1,4 +1,4 @@
-package problems.medium;
+package problems.medium.unsolved;
 
 public class SortColors {
   public void sortColors(int[] nums) {

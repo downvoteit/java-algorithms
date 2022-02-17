@@ -6,8 +6,19 @@ public class LongestSubsequenceRepeatedKTimes {
   }
 
   static class V1 extends LongestSubsequenceRepeatedKTimes {
+    // backtracking
     public String longestSubsequenceRepeatedK(String s, int k) {
       return null;
     }
+
+    private boolean isValidState() {
+      return false;
+    }
+
+    private char[] getCandidates() {
+      return null;
+    }
+
+    private void search() {}
   }
 }

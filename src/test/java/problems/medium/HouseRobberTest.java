@@ -1,14 +1,17 @@
 package problems.medium;
 
+import converters.StringToIntArray;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.converter.ConvertWith;
 import org.junit.jupiter.params.provider.CsvFileSource;
-import converters.StringToIntArray;
 
 class HouseRobberTest {
   @ParameterizedTest
-  @CsvFileSource(resources = "/medium/HouseRobberTest.tsv", numLinesToSkip = 1, delimiter = ';')
+  @CsvFileSource(
+      resources = "/problems/medium/HouseRobberTest.csv",
+      numLinesToSkip = 1,
+      delimiter = ';')
   public void positive(@ConvertWith(StringToIntArray.class) int[] nums, int expected) {
     int actual = new HouseRobber().rob(nums);
 

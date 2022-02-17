@@ -1,4 +1,4 @@
-package problems.medium;
+package problems.medium.unsolved;
 
 import java.util.List;
 

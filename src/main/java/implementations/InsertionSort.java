@@ -1,4 +1,3 @@
 package implementations;
 
-public class InsertionSort {
-}
+public class InsertionSort {}

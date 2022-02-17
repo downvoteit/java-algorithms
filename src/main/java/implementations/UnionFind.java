@@ -1,4 +1,3 @@
 package implementations;
 
-public class UnionFind {
-}
+public class UnionFind {}

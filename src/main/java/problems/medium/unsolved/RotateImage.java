@@ -1,4 +1,4 @@
-package problems.medium;
+package problems.medium.unsolved;
 
 public class RotateImage {
   public void rotate(int[][] matrix) {

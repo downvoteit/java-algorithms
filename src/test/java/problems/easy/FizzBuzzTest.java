@@ -15,13 +15,31 @@ class FizzBuzzTest {
   static Stream<Arguments> source() {
     return Stream.of(
         arguments(3, new ArrayList<>(List.of("1", "2", "Fizz"))),
-        arguments(5, new ArrayList<>(List.of("1","2","Fizz","4","Buzz"))),
-        arguments(15, new ArrayList<>(List.of("1","2","Fizz","4","Buzz","Fizz","7","8","Fizz","Buzz","11","Fizz","13","14","FizzBuzz"))));
+        arguments(5, new ArrayList<>(List.of("1", "2", "Fizz", "4", "Buzz"))),
+        arguments(
+            15,
+            new ArrayList<>(
+                List.of(
+                    "1",
+                    "2",
+                    "Fizz",
+                    "4",
+                    "Buzz",
+                    "Fizz",
+                    "7",
+                    "8",
+                    "Fizz",
+                    "Buzz",
+                    "11",
+                    "Fizz",
+                    "13",
+                    "14",
+                    "FizzBuzz"))));
   }
 
   @ParameterizedTest
   @MethodSource("source")
-  public void positiveTest(int n,ArrayList<String> expected) {
+  public void positiveTest(int n, ArrayList<String> expected) {
     List<String> actual = new FizzBuzz().fizzBuzz(n);
 
     Assertions.assertEquals(expected, actual);
