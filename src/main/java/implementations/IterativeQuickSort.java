@@ -3,6 +3,8 @@ package implementations;
 // https://www.geeksforgeeks.org/iterative-quick-sort/
 public class IterativeQuickSort {
   public void sort(int[] nums, int left, int right) {
+    if (nums.length < 2) return;
+
     int top = -1;
     int[] stack = new int[right - left + 1];
 
