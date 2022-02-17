@@ -1,4 +1,4 @@
-package problems.easy.unsolved;
+package problems.easy;
 
 public class SortAnArray {
   public int[] sortArray(int[] nums) {
