@@ -13,15 +13,15 @@ public class IterativeQuickSort {
       right = stack[top--];
       left = stack[top--];
 
-      int p = partition(nums, left, right);
+      int pi = partition(nums, left, right);
 
-      if (p - 1 > left) {
+      if (pi - 1 > left) {
         stack[++top] = left;
-        stack[++top] = p - 1;
+        stack[++top] = pi - 1;
       }
 
-      if (p + 1 < right) {
-        stack[++top] = p + 1;
+      if (pi + 1 < right) {
+        stack[++top] = pi + 1;
         stack[++top] = right;
       }
     }

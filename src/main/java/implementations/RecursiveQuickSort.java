@@ -1,10 +1,9 @@
 package implementations;
 
-// https://www.geeksforgeeks.org/iterative-quick-sort/
 // https://www.geeksforgeeks.org/quick-sort/
-// https://www.baeldung.com/java-quicksort/
 // unstable, recursive, divide and conquer, in-place
 // time best case O(n*log n)
+// time average case O(n*log n)
 // time worst case O(n^2)
 // space O(log n)
 // suitable for arrays
