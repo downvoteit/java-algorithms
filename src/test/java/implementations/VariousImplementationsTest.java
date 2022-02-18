@@ -25,8 +25,8 @@ class VariousImplementationsTest {
 
   @ParameterizedTest
   @MethodSource("source")
-  public void stringToIntListIntIntListTest(String s, List<List<Integer>> expected) {
-    List<List<Integer>> actual = new VariousImplementations().stringToIntListIntIntList(s);
+  public void stringToIntListInIntListTest(String s, List<List<Integer>> expected) {
+    List<List<Integer>> actual = new VariousImplementations().stringToIntListInIntList(s);
 
     System.out.println(expected);
     System.out.println(actual);

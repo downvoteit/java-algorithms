@@ -4,7 +4,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class VariousImplementations {
-  public List<List<Integer>> stringToIntListIntIntList(String s) {
+  public List<List<Integer>> stringToIntListInIntList(String s) {
     List<List<Integer>> outer = new ArrayList<>();
 
     String[] x1 = s.split("#");
