@@ -6,6 +6,7 @@ public class MaximumSubarray {
     return new V1().maxSubArray(nums);
   }
 
+  // time O(n) space O(1)
   static class V1 {
     public int maxSubArray(int[] nums) {
       int sum = nums[0], temp = 0;
