@@ -19,8 +19,8 @@ class SortAnArrayTest {
       @ConvertWith(StringToIntArray.class) int[] expected) {
     int[] actual = new SortAnArray().sortArray(nums);
 
-    System.out.println(Arrays.toString(nums));
     System.out.println(Arrays.toString(expected));
+    System.out.println(Arrays.toString(nums));
 
     Assertions.assertArrayEquals(expected, actual);
   }

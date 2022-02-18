@@ -1,4 +1,4 @@
-package problems.medium;
+package problems.easy;
 
 import converters.StringToIntArray;
 import org.junit.jupiter.api.Assertions;
@@ -6,14 +6,15 @@ import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.converter.ConvertWith;
 import org.junit.jupiter.params.provider.CsvFileSource;
 
-class HouseRobberTest {
+class BinarySearchTest {
   @ParameterizedTest
   @CsvFileSource(
-      resources = "/problems/medium/HouseRobberTest.csv",
+      resources = "/problems/easy/BinarySearchTest.csv",
       numLinesToSkip = 1,
       delimiter = ';')
-  public void positiveTest(@ConvertWith(StringToIntArray.class) int[] nums, int expected) {
-    int actual = new HouseRobber().rob(nums);
+  public void positiveTest(
+      @ConvertWith(StringToIntArray.class) int[] nums, int target, int expected) {
+    int actual = new BinarySearch().search(nums, target);
 
     Assertions.assertEquals(expected, actual);
   }

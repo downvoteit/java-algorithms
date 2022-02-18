@@ -5,7 +5,6 @@ public class SortAnArray {
     return new V1().sortArray(nums);
   }
 
-  // merge sort
   // time O(n*log n) space O(n)
   static class V1 {
     public int[] sortArray(int[] nums) {

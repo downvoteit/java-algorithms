@@ -8,8 +8,8 @@ public class LongestConsecutiveSequence {
     return new V1().longestConsecutive(nums);
   }
 
+  // time O(n*k) space O(n)
   static class V1 extends LongestConsecutiveSequence {
-    // sets time O(n*k) space O(n) check for previous/next elements
     public int longestConsecutive(int[] nums) {
       int longest = 0;
 

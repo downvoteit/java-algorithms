@@ -9,7 +9,7 @@ import org.junit.jupiter.params.provider.CsvFileSource;
 class SearchTest {
   @ParameterizedTest
   @CsvFileSource(resources = "/implementations/SearchTest.csv", numLinesToSkip = 1, delimiter = ';')
-  public void positiveIterativeBinarySearch(
+  public void positiveIterativeBinarySearchTest(
       @ConvertWith(StringToIntArray.class) int[] nums, int target, int expected) {
     int actual = new IterativeBinarySearch().search(nums, target);
 
@@ -18,7 +18,7 @@ class SearchTest {
 
   @ParameterizedTest
   @CsvFileSource(resources = "/implementations/SearchTest.csv", numLinesToSkip = 1, delimiter = ';')
-  public void positiveRecursiveBinarySearch(
+  public void positiveRecursiveBinarySearchTest(
       @ConvertWith(StringToIntArray.class) int[] nums, int target, int expected) {
     int actual = new RecursiveBinarySearch().search(nums, 0, nums.length, target);
 

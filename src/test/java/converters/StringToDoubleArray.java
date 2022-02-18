@@ -9,23 +9,23 @@ public class StringToDoubleArray extends SimpleArgumentConverter {
     if (o == null) {
       return new double[] {};
     }
-
-    if (o instanceof String) {
-      String[] x = ((String) o).split(",");
-
-      if (x[0].equals("")) {
-        return new double[] {};
-      }
-
-      double[] z = new double[x.length];
-
-      for (int i = 0; i < x.length; i++) {
-        z[i] = Double.parseDouble(x[i].strip());
-      }
-
-      return z;
+    if (!(o instanceof String)) {
+      throw new ClassCastException("Cannot convert object");
     }
 
-    throw new ClassCastException("Cannot convert object");
+    String s = (String) o;
+    String[] x1 = s.split(",");
+
+    if (x1.length == 0 || x1[0].equals("")) {
+      return new double[] {};
+    }
+
+    double[] x2 = new double[x1.length];
+
+    for (int i = 0; i < x1.length; i++) {
+      x2[i] = Double.parseDouble(x1[i].strip());
+    }
+
+    return x2;
   }
 }

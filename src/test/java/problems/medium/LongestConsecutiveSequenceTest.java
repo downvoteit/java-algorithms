@@ -12,7 +12,7 @@ class LongestConsecutiveSequenceTest {
       resources = "/problems/medium/LongestConsecutiveSequenceTest.csv",
       numLinesToSkip = 1,
       delimiter = ';')
-  public void positive(@ConvertWith(StringToIntArray.class) int[] nums, int expected) {
+  public void positiveTest(@ConvertWith(StringToIntArray.class) int[] nums, int expected) {
     int actual = new LongestConsecutiveSequence().longestConsecutive(nums);
 
     Assertions.assertEquals(expected, actual);

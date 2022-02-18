@@ -11,52 +11,52 @@ import java.util.Arrays;
 public class SortTest {
   @ParameterizedTest
   @CsvFileSource(resources = "/implementations/SortTest.csv", numLinesToSkip = 1, delimiter = ';')
-  public void positiveIterativeQuickSort(
+  public void positiveIterativeQuickSortTest(
       @ConvertWith(StringToIntArray.class) int[] nums,
       @ConvertWith(StringToIntArray.class) int[] expected) {
     new IterativeQuickSort().sort(nums, 0, nums.length - 1);
 
-    System.out.println(Arrays.toString(nums));
     System.out.println(Arrays.toString(expected));
+    System.out.println(Arrays.toString(nums));
 
     Assertions.assertArrayEquals(expected, nums);
   }
 
   @ParameterizedTest
   @CsvFileSource(resources = "/implementations/SortTest.csv", numLinesToSkip = 1, delimiter = ';')
-  public void positiveIterativeMergeSort(
+  public void positiveIterativeMergeSortTest(
       @ConvertWith(StringToIntArray.class) int[] nums,
       @ConvertWith(StringToIntArray.class) int[] expected) {
     new IterativeMergeSort().sort(nums, nums.length);
 
-    System.out.println(Arrays.toString(nums));
     System.out.println(Arrays.toString(expected));
+    System.out.println(Arrays.toString(nums));
 
     Assertions.assertArrayEquals(expected, nums);
   }
 
   @ParameterizedTest
   @CsvFileSource(resources = "/implementations/SortTest.csv", numLinesToSkip = 1, delimiter = ';')
-  public void positiveRecursiveMergeSort(
+  public void positiveRecursiveMergeSortTest(
       @ConvertWith(StringToIntArray.class) int[] nums,
       @ConvertWith(StringToIntArray.class) int[] expected) {
     new RecursiveMergeSort().sort(nums, 0, nums.length - 1);
 
-    System.out.println(Arrays.toString(nums));
     System.out.println(Arrays.toString(expected));
+    System.out.println(Arrays.toString(nums));
 
     Assertions.assertArrayEquals(expected, nums);
   }
 
   @ParameterizedTest
   @CsvFileSource(resources = "/implementations/SortTest.csv", numLinesToSkip = 1, delimiter = ';')
-  public void positiveRecursiveQuickSort(
+  public void positiveRecursiveQuickSortTest(
       @ConvertWith(StringToIntArray.class) int[] nums,
       @ConvertWith(StringToIntArray.class) int[] expected) {
     new RecursiveQuickSort().sort(nums, 0, nums.length - 1);
 
-    System.out.println(Arrays.toString(nums));
     System.out.println(Arrays.toString(expected));
+    System.out.println(Arrays.toString(nums));
 
     Assertions.assertArrayEquals(expected, nums);
   }

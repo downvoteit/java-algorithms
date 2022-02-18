@@ -6,15 +6,18 @@ import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.converter.ConvertWith;
 import org.junit.jupiter.params.provider.CsvFileSource;
 
-class HouseRobberTest {
+class TwoSumIITest {
   @ParameterizedTest
   @CsvFileSource(
-      resources = "/problems/medium/HouseRobberTest.csv",
+      resources = "/problems/medium/TwoSumIITest.csv",
       numLinesToSkip = 1,
       delimiter = ';')
-  public void positiveTest(@ConvertWith(StringToIntArray.class) int[] nums, int expected) {
-    int actual = new HouseRobber().rob(nums);
+  public void positiveTest(
+      @ConvertWith(StringToIntArray.class) int[] nums,
+      int target,
+      @ConvertWith(StringToIntArray.class) int[] expected) {
+    int[] actual = new TwoSumII().twoSum(nums, target);
 
-    Assertions.assertEquals(expected, actual);
+    Assertions.assertArrayEquals(expected, actual);
   }
 }

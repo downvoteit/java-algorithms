@@ -7,8 +7,8 @@ public class HouseRobber {
     return new V4().rob(nums);
   }
 
+  // time O(n) space O(1)
   static class V4 extends HouseRobber {
-    // iterative bottom-up tabulation time O(n) space O(1)
     public int rob(int[] nums) {
       if (nums.length == 0) return 0;
 
@@ -23,8 +23,8 @@ public class HouseRobber {
     }
   }
 
+  // time O(n) space O(n)
   static class V3 extends HouseRobber {
-    // iterative bottom-up tabulation time O(n) space O(n)
     public int rob(int[] nums) {
       if (nums.length == 0) return 0;
 
@@ -41,8 +41,8 @@ public class HouseRobber {
     }
   }
 
+  // time O(2^n) space O(n)
   static class V2 extends HouseRobber {
-    // recursion top-down memoization time O(2^n) space O(n)
     public int rob(int[] nums) {
       int[] mem = new int[nums.length];
 
@@ -63,8 +63,8 @@ public class HouseRobber {
     }
   }
 
+  // time O(2^n) space O(n)
   static class V1 extends HouseRobber {
-    // recursion time O(2^n) space (n)
     public int rob(int[] nums) {
       return robRecursive(nums, 0);
     }

@@ -10,7 +10,7 @@ class LongestSubsequenceRepeatedKTimesTest {
       resources = "/problems/hard/LongestSubsequenceRepeatedKTimesTest.csv",
       numLinesToSkip = 1,
       delimiter = ';')
-  public void positive(String sequence, int num, String expected) {
+  public void positiveTest(String sequence, int num, String expected) {
     String actual =
         new LongestSubsequenceRepeatedKTimes().longestSubsequenceRepeatedK(sequence, num);
 

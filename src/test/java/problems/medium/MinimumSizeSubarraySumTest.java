@@ -12,7 +12,8 @@ class MinimumSizeSubarraySumTest {
       resources = "/problems/medium/MinimumSizeSubarraySumTest.csv",
       numLinesToSkip = 1,
       delimiter = ';')
-  public void positive(int target, @ConvertWith(StringToIntArray.class) int[] nums, int expected) {
+  public void positiveTest(
+      int target, @ConvertWith(StringToIntArray.class) int[] nums, int expected) {
     int actual = new MinimumSizeSubarraySum().minSubArrayLen(target, nums);
 
     Assertions.assertEquals(expected, actual);
