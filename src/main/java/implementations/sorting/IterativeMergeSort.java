@@ -1,21 +1,18 @@
-package implementations;
+package implementations.sorting;
 
-// https://www.geeksforgeeks.org/merge-sort/
-// stable, recursive, divide and conquer, not in-place
-// time best case O(n*log n)
-// time average case O(n*log n)
-// time worse case O(n*log n)
-// space O(n)
-public class RecursiveMergeSort {
-  public void sort(int[] nums, int left, int right) {
-    if (left >= right) return;
+// https://www.geeksforgeeks.org/iterative-merge-sort/
+public class IterativeMergeSort {
+  public void sort(int[] nums, int n) {
+    int curSize, leftStart;
 
-    int mid = left + (right - left) / 2;
+    for (curSize = 1; curSize <= n - 1; curSize = 2 * curSize)
+      for (leftStart = 0; leftStart < n - 1; leftStart += 2 * curSize) {
+        int mid = Math.min(leftStart + curSize - 1, n - 1);
 
-    sort(nums, left, mid);
-    sort(nums, mid + 1, right);
+        int right_end = Math.min(leftStart + 2 * curSize - 1, n - 1);
 
-    merge(nums, left, mid, right);
+        merge(nums, leftStart, mid, right_end);
+      }
   }
 
   private void merge(int[] nums, int left, int mid, int right) {

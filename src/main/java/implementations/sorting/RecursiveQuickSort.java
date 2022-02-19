@@ -1,4 +1,4 @@
-package implementations;
+package implementations.sorting;
 
 // https://www.geeksforgeeks.org/quick-sort/
 // unstable, recursive, divide and conquer, in-place

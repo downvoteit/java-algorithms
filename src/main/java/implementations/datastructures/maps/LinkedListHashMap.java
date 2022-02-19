@@ -1,11 +1,13 @@
-package implementations.map;
+package implementations.datastructures.maps;
 
 import java.util.ArrayList;
 import java.util.List;
 
+// https://leetcode.com/problems/design-hashmap/solution/
 public final class LinkedListHashMap<K, V> {
+  // Linked list-backed Hashtable
   private final int capacity;
-  private final List<Bucket<K, V>> table;
+  private final List<LinkedListBucket<K, V>> table;
 
   public LinkedListHashMap() {
     this(8);
@@ -16,7 +18,7 @@ public final class LinkedListHashMap<K, V> {
     this.table = new ArrayList<>();
 
     for (int i = 0; i < capacity; i++) {
-      table.add(new Bucket<>());
+      table.add(new LinkedListBucket<>());
     }
   }
 

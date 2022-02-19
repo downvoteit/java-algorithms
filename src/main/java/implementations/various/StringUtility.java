@@ -1,9 +1,9 @@
-package implementations;
+package implementations.various;
 
 import java.util.ArrayList;
 import java.util.List;
 
-public class VariousImplementations {
+public class StringUtility {
   public List<List<Integer>> stringToIntListInIntList(String s) {
     List<List<Integer>> outer = new ArrayList<>();
 

@@ -1,6 +1,7 @@
-package implementations;
+package implementations.datastructures;
 
-public final class IntQueue { // FIFO - offer to the end, poll from the front
+public final class IntQueue {
+  // FIFO - offer to the end, poll from the front
   private final int[] entries;
   private int index = -1;
 

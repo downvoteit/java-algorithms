@@ -1,4 +1,4 @@
-package implementations;
+package implementations.sorting;
 
 // https://www.geeksforgeeks.org/iterative-quick-sort/
 public class IterativeQuickSort {

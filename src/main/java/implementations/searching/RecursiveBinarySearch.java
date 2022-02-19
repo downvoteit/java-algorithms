@@ -1,4 +1,4 @@
-package implementations;
+package implementations.searching;
 
 // https://www.geeksforgeeks.org/binary-search/
 public class RecursiveBinarySearch {

@@ -1,6 +1,7 @@
-package implementations;
+package implementations.datastructures;
 
-public final class IntStack { // LIFO - push to the front, pop from the front
+public final class IntStack {
+  // LIFO - push to the front, pop from the front
   private final int[] entries;
   private int index = -1;
 
