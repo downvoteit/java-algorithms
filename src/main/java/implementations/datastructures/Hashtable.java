@@ -1,24 +1,19 @@
-package implementations.datastructures.maps;
+package implementations.datastructures;
 
 import java.util.ArrayList;
 import java.util.List;
 
+// TODO Algorithms, 4th Edition by Sedgewick R. Wayne K. [3.4]
 // https://leetcode.com/problems/design-hashmap/solution/
-public final class LinkedListHashMap<K, V> {
-  // Linked list-backed Hashtable
-  private final int capacity;
-  private final List<LinkedListBucket<K, V>> table;
+public final class Hashtable<K, V> {
+  private final int CAPACITY = 8;
+  private final List<Bucket<K, V>> table;
 
-  public LinkedListHashMap() {
-    this(8);
-  }
-
-  public LinkedListHashMap(int capacity) {
-    this.capacity = capacity;
+  public Hashtable() {
     this.table = new ArrayList<>();
 
-    for (int i = 0; i < capacity; i++) {
-      table.add(new LinkedListBucket<>());
+    for (int i = 0; i < CAPACITY; i++) {
+      table.add(new Bucket<>());
     }
   }
 

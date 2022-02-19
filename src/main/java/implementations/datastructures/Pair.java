@@ -1,10 +1,10 @@
-package implementations.datastructures.maps;
+package implementations.datastructures;
 
-class KeyValuePair<K, V> {
+class Pair<K, V> {
   K key;
   V value;
 
-  KeyValuePair(K key, V value) {
+  Pair(K key, V value) {
     this.key = key;
     this.value = value;
   }

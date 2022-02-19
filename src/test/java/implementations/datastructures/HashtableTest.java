@@ -1,3 +1,3 @@
 package implementations.datastructures;
 
-class MinMaxHeapTest {}
+class HashtableTest {}
