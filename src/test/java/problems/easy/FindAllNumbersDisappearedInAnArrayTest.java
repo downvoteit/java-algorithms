@@ -11,7 +11,7 @@ import java.util.stream.Stream;
 
 import static org.junit.jupiter.params.provider.Arguments.arguments;
 
-class FindAllNumbersDisappearedTest {
+class FindAllNumbersDisappearedInAnArrayTest {
   static Stream<Arguments> source() {
     return Stream.of(
         arguments(new int[] {4, 3, 2, 7, 8, 2, 3, 1}, new int[] {5, 6}),
@@ -23,7 +23,7 @@ class FindAllNumbersDisappearedTest {
   @ParameterizedTest
   @MethodSource("source")
   public void positiveTest(int[] nums, int[] expected) {
-    List<Integer> actual = new FindAllNumbersDisappeared().findDisappearedNumbers(nums);
+    List<Integer> actual = new FindAllNumbersDisappearedInAnArray().findDisappearedNumbers(nums);
 
     int expectedValue = Arrays.stream(expected).sum();
     int actualValue = actual.stream().mapToInt(o -> o).sum();

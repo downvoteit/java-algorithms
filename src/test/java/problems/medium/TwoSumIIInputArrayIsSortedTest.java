@@ -6,7 +6,7 @@ import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.converter.ConvertWith;
 import org.junit.jupiter.params.provider.CsvFileSource;
 
-class TwoSumIITest {
+class TwoSumIIInputArrayIsSortedTest {
   @ParameterizedTest
   @CsvFileSource(
       resources = "/problems/medium/TwoSumIITest.csv",
@@ -16,7 +16,7 @@ class TwoSumIITest {
       @ConvertWith(StringToIntArray.class) int[] nums,
       int target,
       @ConvertWith(StringToIntArray.class) int[] expected) {
-    int[] actual = new TwoSumII().twoSum(nums, target);
+    int[] actual = new TwoSumIIInputArrayIsSorted().twoSum(nums, target);
 
     Assertions.assertArrayEquals(expected, actual);
   }

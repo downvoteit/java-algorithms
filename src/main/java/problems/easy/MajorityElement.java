@@ -4,6 +4,7 @@ import java.util.Arrays;
 import java.util.HashMap;
 import java.util.Map;
 
+// https://leetcode.com/problems/majority-element/
 public class MajorityElement {
   public int majorityElement(int[] nums) {
     return new V1().majorityElement(nums);

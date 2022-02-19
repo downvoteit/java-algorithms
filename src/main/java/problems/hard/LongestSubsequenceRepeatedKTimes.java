@@ -1,5 +1,6 @@
 package problems.hard;
 
+// https://leetcode.com/problems/longest-subsequence-repeated-k-times/
 public class LongestSubsequenceRepeatedKTimes {
   public String longestSubsequenceRepeatedK(String s, int k) {
     return new V1().longestSubsequenceRepeatedK(s, k);

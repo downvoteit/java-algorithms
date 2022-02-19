@@ -1,7 +1,7 @@
 package problems.easy;
 
+// https://leetcode.com/problems/maximum-subarray/
 public class MaximumSubarray {
-
   public int maxSubArray(int[] nums) {
     return new V1().maxSubArray(nums);
   }

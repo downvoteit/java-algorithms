@@ -1,13 +1,14 @@
 package problems.easy;
 
+// https://leetcode.com/problems/fibonacci-number/
 public class FibonacciNumbers {
-  public int calculate(int n) {
-    return new V4().calculate(n);
+  public int fib(int n) {
+    return new V4().fib(n);
   }
 
   // time O(2^n) space O(n)
   static class V2 extends FibonacciNumbers {
-    public int calculate(int n) {
+    public int fib(int n) {
       int[] arr = new int[n];
 
       return calculateMemoized(n, arr);
@@ -39,18 +40,18 @@ public class FibonacciNumbers {
     // (3F + 2F) + (2F + 1) =
     // ((2F + 1) + (1 + 0)) + ((1 + 0) + 1) =
     // (1 + 1 + 1) + (1 + 1) = 5
-    public int calculate(int n) {
+    public int fib(int n) {
       if (n < 2) {
         return n;
       }
 
-      return calculate(n - 1) + calculate(n - 2);
+      return fib(n - 1) + fib(n - 2);
     }
   }
 
   // time O(n) space O(1)
   static class V4 extends FibonacciNumbers {
-    public int calculate(int n) {
+    public int fib(int n) {
       if (n < 2) {
         return n;
       }
@@ -68,7 +69,7 @@ public class FibonacciNumbers {
 
   // time O(n) space O(n)
   static class V3 extends FibonacciNumbers {
-    public int calculate(int n) {
+    public int fib(int n) {
       if (n < 2) {
         return n;
       }

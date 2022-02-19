@@ -3,6 +3,7 @@ package problems.easy;
 import java.util.ArrayList;
 import java.util.List;
 
+// https://leetcode.com/problems/fizz-buzz/
 public class FizzBuzz {
   public List<String> fizzBuzz(int n) {
     return new V1().fizzBuzz(n);

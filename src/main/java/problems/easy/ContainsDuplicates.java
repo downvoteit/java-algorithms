@@ -2,6 +2,7 @@ package problems.easy;
 
 import java.util.*;
 
+// https://leetcode.com/problems/contains-duplicate/
 public class ContainsDuplicates {
   public boolean containsDuplicate(int[] nums) {
     return new V4().containsDuplicate(nums);

@@ -1,5 +1,6 @@
 package problems.easy.unsolved;
 
+// https://leetcode.com/problems/path-sum/
 public class PathSum {
   public boolean hasPathSum(TreeNode root, int targetSum) {
     return false;

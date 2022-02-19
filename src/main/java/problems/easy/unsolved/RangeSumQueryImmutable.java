@@ -1,5 +1,6 @@
 package problems.easy.unsolved;
 
+// https://leetcode.com/problems/range-sum-query-immutable/
 public class RangeSumQueryImmutable {
   class NumArray {
     public NumArray(int[] nums) {}

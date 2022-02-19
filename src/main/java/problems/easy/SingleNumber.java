@@ -1,5 +1,6 @@
 package problems.easy;
 
+// https://leetcode.com/problems/single-number/
 public class SingleNumber {
   public int singleNumber(int[] nums) {
     return new V1().singleNumber(nums);

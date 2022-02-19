@@ -1,5 +1,6 @@
 package problems.easy;
 
+// https://leetcode.com/problems/missing-number/
 public class MissingNumber {
   public int missingNumber(int[] nums) {
     return new V1().missingNumber(nums);

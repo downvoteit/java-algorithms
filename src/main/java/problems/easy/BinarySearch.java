@@ -1,5 +1,6 @@
 package problems.easy;
 
+// https://leetcode.com/problems/binary-search/
 public class BinarySearch {
   public int search(int[] nums, int target) {
     return new V1().search(nums, target);

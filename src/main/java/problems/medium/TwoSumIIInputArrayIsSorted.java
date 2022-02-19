@@ -1,6 +1,7 @@
 package problems.medium;
 
-public class TwoSumII {
+// https://leetcode.com/problems/two-sum-ii-input-array-is-sorted/
+public class TwoSumIIInputArrayIsSorted {
   public int[] twoSum(int[] nums, int target) {
     return new V1().twoSum(nums, target);
   }
