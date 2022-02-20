@@ -10,7 +10,7 @@ public class ThreeSum {
     return new V2().threeSum(nums);
   }
 
-  // time O(log n) space O(n)
+  // time O(n^2) space O(n)
   // two-pointers + binary search refactor
   static class V2 {
     public List<List<Integer>> threeSum(int[] nums) {
@@ -47,7 +47,7 @@ public class ThreeSum {
     }
   }
 
-  // time O(log n) space O(n)
+  // time O(n^2) space O(n)
   // two-pointers + binary search
   static class V1 {
     public List<List<Integer>> threeSum(int[] nums) {
