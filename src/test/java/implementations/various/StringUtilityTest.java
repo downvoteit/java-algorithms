@@ -3,6 +3,7 @@ package implementations.various;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.Arguments;
+import org.junit.jupiter.params.provider.CsvSource;
 import org.junit.jupiter.params.provider.MethodSource;
 
 import java.util.ArrayList;
@@ -32,5 +33,17 @@ class StringUtilityTest {
     System.out.println(actual);
 
     Assertions.assertEquals(expected, actual);
+  }
+
+  @ParameterizedTest
+  @CsvSource({
+    "1,00000000 00000000 00000000 00000001,true",
+    "15,00000000 00000000 00000000 00001111,true",
+    "0,00000000 00000000 00000000 00000001,false",
+  })
+  public void stringToIntListInIntListTest(int num, String s, boolean expected) {
+    boolean actual = new StringUtility().integerTo32BitBinaryString(num).equals(s);
+
+    Assertions.assertEquals(actual, expected);
   }
 }
