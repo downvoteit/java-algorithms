@@ -1,22 +1,10 @@
 package implementations.various;
 
 import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.List;
 
 // https://www.geeksforgeeks.org/print-all-possible-combinations-of-r-elements-in-a-given-array-of-size-n/
 public class CombinationUtility {
-  public static void main(String[] args) {
-    CombinationUtility utility = new CombinationUtility();
-
-    int n = 5, r = 3;
-    long[] array = utility.calculateCombinationsAndPermutations(n, r);
-    List<List<Integer>> list = utility.generateAllPossibleCombinations(n, r);
-
-    System.out.println(Arrays.toString(array));
-    System.out.println(list);
-  }
-
   public long[] calculateCombinationsAndPermutations(int n, int r) {
     if (n < r) throw new IllegalArgumentException("r cannot be greater than n");
 
