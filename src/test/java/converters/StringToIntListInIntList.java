@@ -36,7 +36,7 @@ public class StringToIntListInIntList extends SimpleArgumentConverter {
       }
 
       for (String x4 : x3) {
-        inner.add(Integer.parseInt(x4));
+        inner.add(Integer.parseInt(x4.strip()));
       }
 
       outer.add(inner);

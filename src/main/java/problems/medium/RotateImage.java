@@ -1,4 +1,4 @@
-package problems.medium.unsolved;
+package problems.medium;
 
 // https://leetcode.com/problems/rotate-image/
 public class RotateImage {

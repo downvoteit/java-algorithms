@@ -57,7 +57,7 @@ public class BitManipulation {
 
   @ParameterizedTest
   @CsvSource({"2,1,4,true", "3,2,12,true", "1,2,5,false"})
-  public void isLeftShifted(int x, int y, int z, boolean expected) {
+  public void isLeftShiftedTest(int x, int y, int z, boolean expected) {
     boolean actual = (x << y) == z;
 
     Assertions.assertEquals(actual, expected);
