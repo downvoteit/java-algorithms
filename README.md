@@ -12,16 +12,18 @@
     - https://www.educative.io/courses/grokking-the-coding-interview
 - Educative Grokking the Coding Interview: Patterns for Coding Questions by Design Gurus
   - https://www.educative.io/courses/grokking-dynamic-programming-patterns-for-coding-interviews
+- Educative Master Bit Manipulation for Coding Interviews
+  - https://www.educative.io/courses/bit-manipulation
 - Leetcode Problems
-  - https://leetcode.com/problemset/all/
+  - https://leetcode.com/problemset/all
 - Leetcode Problems organized by patterns
-  - https://seanprashad.com/leetcode-patterns/
+  - https://seanprashad.com/leetcode-patterns
 - Oracle Java docs
-  - https://docs.oracle.com/en/java/javase/11/docs/api/
+  - https://docs.oracle.com/en/java/javase/11/docs/api
 - Apache Maven docs
   - https://maven.apache.org/guides/
 - JUnit 5 docs
-  - https://junit.org/junit5/docs/current/user-guide/
+  - https://junit.org/junit5/docs/current/user-guide
 
 ## General Patterns
 
