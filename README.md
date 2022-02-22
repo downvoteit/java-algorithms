@@ -6,7 +6,7 @@
 
 ## Learning resources
 
-- Algorithms, 4th Edition by Sedgewick R. Wayne K.
+- Algorithms, 4th Edition by Sedgewick R., Wayne K.
 - Introduction to Algorithms, 3rd Edition By Cormen et al.
 - Educative Grokking Dynamic Programming Patterns for Coding Interviews by Design Gurus
     - https://www.educative.io/courses/grokking-the-coding-interview

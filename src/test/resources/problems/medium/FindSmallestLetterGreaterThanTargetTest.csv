@@ -1,0 +1,10 @@
+LETTERS;TARGET;EXPECTED
+a,b;z;a
+c,f,j;a;c
+c,f,j;c;f
+c,f,j;d;f
+c,f,j;g;j
+c,f,j;j;c
+e,e,e,k,q,q,q,v,v,y;e;k
+e,e,e,k,q,q,q,v,v,y;q;v
+e,e,e,e,e,e,n,n,n,n;n;e
