@@ -14,20 +14,6 @@ if (i > 0 && nums[i - 1] == nums[i]) {
 int mid = left + right >>> 1;
 ```
 
-## Recursive, square time fibonacci number
-
-```
-int num = fib(n - 1) + fib(n - 2); 
-```
-
-## Constant time fibonacci number
-
-```
-int temp = first + second;
-first = second;
-second = temp;
-```
-
 ## Include only positive numbers
 
 ```
@@ -57,7 +43,7 @@ if (nums[i - 1] != nums[i]) {
 }
 ``` 
 
-## While-loop break early
+## Break early top while-loop
 ```
 TOP:
 while (left < right) {
