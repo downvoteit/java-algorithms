@@ -1,4 +1,4 @@
-# Snippets
+# General Snippets
 
 ## Continue on duplicates
 

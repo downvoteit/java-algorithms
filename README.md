@@ -7,13 +7,17 @@
 ## Learning resources
 
 - Algorithms, 4th Edition by Sedgewick R., Wayne K.
-- Introduction to Algorithms, 3rd Edition By Cormen et al.
+- Introduction to Algorithms, 3rd Edition by Cormen et al.
+- Neetcode channel
+    - https://www.youtube.com/channel/UC_mYaQAE6-71rjSN6CeCA-g
 - Educative Grokking Dynamic Programming Patterns for Coding Interviews by Design Gurus
     - https://www.educative.io/courses/grokking-the-coding-interview
 - Educative Grokking the Coding Interview: Patterns for Coding Questions by Design Gurus
   - https://www.educative.io/courses/grokking-dynamic-programming-patterns-for-coding-interviews
 - Educative Master Bit Manipulation for Coding Interviews
   - https://www.educative.io/courses/bit-manipulation
+- GeekForGeeks articles
+    - https://www.geeksforgeeks.org
 - Leetcode Problems
   - https://leetcode.com/problemset/all
 - Leetcode Problems organized by patterns
