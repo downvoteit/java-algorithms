@@ -1,0 +1,8 @@
+N;EXPECTED
+1;true
+16;true
+3;false
+-2147483648;false
+-1;false
+-9;false
+-10;false

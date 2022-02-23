@@ -1,0 +1,15 @@
+package problems.easy;
+
+// https://leetcode.com/problems/power-of-two/
+public class PowerOfTwo {
+  public boolean isPowerOfTwo(int n) {
+    return new V1().isPowerOfTwo(n);
+  }
+
+  // time O(1) space O(1)
+  static class V1 {
+    public boolean isPowerOfTwo(int n) {
+      return n > 0 && (n & (n - 1)) == 0;
+    }
+  }
+}

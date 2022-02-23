@@ -9,7 +9,7 @@ import org.junit.jupiter.params.provider.CsvFileSource;
 class FindSmallestLetterGreaterThanTargetTest {
   @ParameterizedTest
   @CsvFileSource(
-      resources = "/problems/medium/FindSmallestLetterGreaterThanTargetTest.csv",
+      resources = "/problems/easy/FindSmallestLetterGreaterThanTargetTest.csv",
       numLinesToSkip = 1,
       delimiter = ';')
   public void positiveTest(
