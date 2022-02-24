@@ -8,10 +8,7 @@ import org.junit.jupiter.params.provider.CsvFileSource;
 
 class BinarySearchTest {
   @ParameterizedTest
-  @CsvFileSource(
-      resources = "/problems/easy/BinarySearchTest.csv",
-      numLinesToSkip = 1,
-      delimiter = ';')
+  @CsvFileSource(resources = "/problems/BinarySearchTest.csv", numLinesToSkip = 1, delimiter = ';')
   public void positiveTest(
       @ConvertWith(StringToIntArray.class) int[] nums, int target, int expected) {
     int actual = new BinarySearch().search(nums, target);

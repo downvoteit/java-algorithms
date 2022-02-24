@@ -8,10 +8,7 @@ import org.junit.jupiter.params.provider.CsvFileSource;
 
 class HouseRobberTest {
   @ParameterizedTest
-  @CsvFileSource(
-      resources = "/problems/medium/HouseRobberTest.csv",
-      numLinesToSkip = 1,
-      delimiter = ';')
+  @CsvFileSource(resources = "/problems/HouseRobberTest.csv", numLinesToSkip = 1, delimiter = ';')
   public void positiveTest(@ConvertWith(StringToIntArray.class) int[] nums, int expected) {
     int actual = new HouseRobber().rob(nums);
 

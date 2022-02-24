@@ -7,7 +7,7 @@ import org.junit.jupiter.params.provider.CsvFileSource;
 class LongestSubsequenceRepeatedKTimesTest {
   @ParameterizedTest
   @CsvFileSource(
-      resources = "/problems/hard/LongestSubsequenceRepeatedKTimesTest.csv",
+      resources = "/problems/LongestSubsequenceRepeatedKTimesTest.csv",
       numLinesToSkip = 1,
       delimiter = ';')
   public void positiveTest(String sequence, int num, String expected) {

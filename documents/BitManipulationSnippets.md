@@ -81,6 +81,12 @@ return true;
 boolean res = num != 0 && (num & (n - 1)) == 0;
 ```
 
+#### Brian Kernighan’s algorithm (ignore negatives)
+
+```
+boolean res = num > 0 && (num & (n - 1)) == 0;
+```
+
 ## OR (|)
 
 ### Find number of flips required to make a|b equal to c

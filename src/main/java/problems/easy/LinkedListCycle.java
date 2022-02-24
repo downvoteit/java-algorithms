@@ -1,12 +1,18 @@
-package problems.easy.unsolved;
+package problems.easy;
 
 // https://leetcode.com/problems/linked-list-cycle/
 public class LinkedListCycle {
   public boolean hasCycle(ListNode head) {
-    return false;
+    return new V1().hasCycle(head);
   }
 
-  class ListNode {
+  static class V1 {
+    public boolean hasCycle(ListNode head) {
+      return false;
+    }
+  }
+
+  public class ListNode {
     int val;
     ListNode next;
 

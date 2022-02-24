@@ -4,7 +4,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class StringUtility {
-  public List<List<Integer>> stringToIntListInIntList(String s) {
+  public static List<List<Integer>> stringToIntListInIntList(String s) {
     List<List<Integer>> outer = new ArrayList<>();
 
     String[] x1 = s.split("#");
@@ -30,9 +30,11 @@ public class StringUtility {
     return outer;
   }
 
-  public String integerTo32BitBinaryString(int num) {
+  public static String integerToNBitBinaryString(int num, int bitSize) {
+    if (bitSize < 8) bitSize = 8;
+
     String x1 = Integer.toBinaryString(num);
-    String x2 = "0".repeat(32 - x1.length()).concat(x1);
+    String x2 = "0".repeat(bitSize - x1.length()).concat(x1);
     char[] x3 = x2.toCharArray();
     StringBuilder x4 = new StringBuilder();
 

@@ -3,8 +3,11 @@
 ## Continue on duplicates
 
 ```
-if (i > 0 && nums[i - 1] == nums[i]) {
-  continue;
+for (i = 1; i < nums.length; i++) {
+    if (i > 0 && nums[i - 1] == nums[i]) {
+      continue;
+    }
+    ...
 }
 ```
 
@@ -26,14 +29,22 @@ if (num[i] < 0) temp = 0;
 int temp = Math.min(curSum, temp);
 ```
 
-## 2D-array diagonal traversal
+## Diagonally traverse a 2D-array
 
 ```
 int posPlane = row + column;
 int negPlane = row - column;
 ```
 
-## In-place substitution
+## In-place substitution by swapping using two indices
+
+```
+int temp = nums[i];
+nums[i] = nums[j];
+nums[j] = temp;
+```
+
+## In-place substitution to avoid duplicates
 
 ```
 int nextNonDupl = 0;
@@ -43,7 +54,7 @@ if (nums[i - 1] != nums[i]) {
 }
 ``` 
 
-## Break early top while-loop
+## Break-early topmost while-loop
 ```
 TOP:
 while (left < right) {

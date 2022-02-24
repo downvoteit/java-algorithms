@@ -6,14 +6,14 @@ import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.converter.ConvertWith;
 import org.junit.jupiter.params.provider.CsvFileSource;
 
-class MaximumSubarrayTest {
+class PeakIndexInAMountainArrayTest {
   @ParameterizedTest
   @CsvFileSource(
-      resources = "/problems/MaximumSubarrayTest.csv",
+      resources = "/problems/PeakIndexInAMountainArrayTest.csv",
       numLinesToSkip = 1,
       delimiter = ';')
-  public void positiveTest(@ConvertWith(StringToIntArray.class) int[] nums, int expected) {
-    int actual = new MaximumSubarray().maxSubArray(nums);
+  public void positiveTest(@ConvertWith(StringToIntArray.class) int[] arr, int expected) {
+    int actual = new PeakIndexInAMountainArray().peakIndexInMountainArray(arr);
 
     Assertions.assertEquals(expected, actual);
   }

@@ -6,8 +6,10 @@
 
 ## Learning resources
 
-- Algorithms, 4th Edition by Sedgewick R., Wayne K.
-- Introduction to Algorithms, 3rd Edition by Cormen et al.
+- Algorithms, 4th Edition 
+  - By Sedgewick R., Wayne K.
+- Introduction to Algorithms, 3rd Edition 
+  - By Cormen et al.
 - Neetcode channel
     - https://www.youtube.com/channel/UC_mYaQAE6-71rjSN6CeCA-g
 - Educative Grokking Dynamic Programming Patterns for Coding Interviews by Design Gurus

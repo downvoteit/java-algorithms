@@ -11,7 +11,7 @@ import java.util.List;
 
 class ThreeSumTest {
   @ParameterizedTest
-  @CsvFileSource(resources = "/problems/medium/ThreeSum.csv", numLinesToSkip = 1, delimiter = ';')
+  @CsvFileSource(resources = "/problems/ThreeSum.csv", numLinesToSkip = 1, delimiter = ';')
   public void positiveTest(
       @ConvertWith(StringToIntArray.class) int[] nums,
       @ConvertWith(StringToIntListInIntList.class) List<List<Integer>> expected) {

@@ -27,7 +27,7 @@ class StringUtilityTest {
   @ParameterizedTest
   @MethodSource("source")
   public void stringToIntListInIntListTest(String s, List<List<Integer>> expected) {
-    List<List<Integer>> actual = new StringUtility().stringToIntListInIntList(s);
+    List<List<Integer>> actual = StringUtility.stringToIntListInIntList(s);
 
     System.out.println(expected);
     System.out.println(actual);
@@ -37,12 +37,21 @@ class StringUtilityTest {
 
   @ParameterizedTest
   @CsvSource({
-    "1,00000000 00000000 00000000 00000001,true",
-    "15,00000000 00000000 00000000 00001111,true",
-    "0,00000000 00000000 00000000 00000001,false",
+    "1,32,00000000 00000000 00000000 00000001,true",
+    "15,32,00000000 00000000 00000000 00001111,true",
+    "0,32,00000000 00000000 00000000 00000001,false",
+    "1,0,00000001,true",
+    "2,8,00000010,true",
+    "4,8,00000100,true",
+    "0,8,00000001,false",
   })
-  public void stringToIntListInIntListTest(int num, String s, boolean expected) {
-    boolean actual = new StringUtility().integerTo32BitBinaryString(num).equals(s);
+  public void stringToIntListInIntListTest(
+      int num, int bitSize, String expectedValue, boolean expected) {
+    String actualValue = StringUtility.integerToNBitBinaryString(num, bitSize);
+    boolean actual = actualValue.equals(expectedValue);
+
+    System.out.println(expectedValue);
+    System.out.println(actualValue);
 
     Assertions.assertEquals(actual, expected);
   }

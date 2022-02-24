@@ -9,7 +9,7 @@ import org.junit.jupiter.params.provider.CsvFileSource;
 class LongestConsecutiveSequenceTest {
   @ParameterizedTest
   @CsvFileSource(
-      resources = "/problems/medium/LongestConsecutiveSequenceTest.csv",
+      resources = "/problems/LongestConsecutiveSequenceTest.csv",
       numLinesToSkip = 1,
       delimiter = ';')
   public void positiveTest(@ConvertWith(StringToIntArray.class) int[] nums, int expected) {

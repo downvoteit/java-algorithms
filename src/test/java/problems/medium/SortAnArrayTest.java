@@ -10,10 +10,7 @@ import java.util.Arrays;
 
 class SortAnArrayTest {
   @ParameterizedTest
-  @CsvFileSource(
-      resources = "/problems/medium/SortAnArrayTest.csv",
-      numLinesToSkip = 1,
-      delimiter = ';')
+  @CsvFileSource(resources = "/problems/SortAnArrayTest.csv", numLinesToSkip = 1, delimiter = ';')
   public void positiveTest(
       @ConvertWith(StringToIntArray.class) int[] nums,
       @ConvertWith(StringToIntArray.class) int[] expected) {

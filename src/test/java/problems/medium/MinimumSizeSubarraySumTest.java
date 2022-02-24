@@ -9,7 +9,7 @@ import org.junit.jupiter.params.provider.CsvFileSource;
 class MinimumSizeSubarraySumTest {
   @ParameterizedTest
   @CsvFileSource(
-      resources = "/problems/medium/MinimumSizeSubarraySumTest.csv",
+      resources = "/problems/MinimumSizeSubarraySumTest.csv",
       numLinesToSkip = 1,
       delimiter = ';')
   public void positiveTest(

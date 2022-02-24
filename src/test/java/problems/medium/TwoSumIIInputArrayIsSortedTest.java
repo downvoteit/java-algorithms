@@ -8,10 +8,7 @@ import org.junit.jupiter.params.provider.CsvFileSource;
 
 class TwoSumIIInputArrayIsSortedTest {
   @ParameterizedTest
-  @CsvFileSource(
-      resources = "/problems/medium/TwoSumIITest.csv",
-      numLinesToSkip = 1,
-      delimiter = ';')
+  @CsvFileSource(resources = "/problems/TwoSumIITest.csv", numLinesToSkip = 1, delimiter = ';')
   public void positiveTest(
       @ConvertWith(StringToIntArray.class) int[] nums,
       int target,
