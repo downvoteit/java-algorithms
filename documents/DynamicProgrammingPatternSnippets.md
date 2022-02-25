@@ -1,4 +1,4 @@
-# Dynamic Programming Snippets
+# Dynamic Programming Pattern Snippets
 
 ## Recursive, square time, top-down, naive fibonacci number
 

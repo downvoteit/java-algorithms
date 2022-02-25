@@ -6,7 +6,7 @@ public class RotateImage {
     new V1().rotate(matrix);
   }
 
-  static class V1 {
+  static class V1 extends RotateImage {
     public void rotate(int[][] matrix) {}
   }
 }

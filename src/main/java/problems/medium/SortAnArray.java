@@ -7,7 +7,7 @@ public class SortAnArray {
   }
 
   // time O(n*log n) space O(n)
-  static class V1 {
+  static class V1 extends SortAnArray {
     public int[] sortArray(int[] nums) {
       sort(nums, nums.length);
 

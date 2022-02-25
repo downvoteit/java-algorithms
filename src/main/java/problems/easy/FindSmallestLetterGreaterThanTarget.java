@@ -11,7 +11,7 @@ public class FindSmallestLetterGreaterThanTarget {
   // Than Target.
   // Memory Usage: 42.6 MB, less than 76.35% of Java online submissions for Find Smallest Letter
   // Greater Than Target.
-  static class V1 {
+  static class V1 extends FindSmallestLetterGreaterThanTarget {
     public char nextGreatestLetter(char[] letters, char target) {
       if (target > letters[letters.length - 1] || target < letters[0]) {
         return letters[0];

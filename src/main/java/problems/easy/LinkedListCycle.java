@@ -6,7 +6,7 @@ public class LinkedListCycle {
     return new V1().hasCycle(head);
   }
 
-  static class V1 {
+  static class V1 extends LinkedListCycle {
     public boolean hasCycle(ListNode head) {
       return false;
     }

@@ -7,7 +7,7 @@ public class MinimumSizeSubarraySum {
   }
 
   // time O(m*n) space O(1)
-  static class V1 {
+  static class V1 extends MinimumSizeSubarraySum {
     public int minSubArrayLen(int target, int[] nums) {
       int winStart = 0, winEnd, winSum = 0, minLen = Integer.MAX_VALUE;
 

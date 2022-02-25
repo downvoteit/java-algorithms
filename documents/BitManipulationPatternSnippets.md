@@ -1,4 +1,4 @@
-# Bit Manipulation Snippets
+# Bit Manipulation Pattern Snippets
 
 ## AND (&)
 

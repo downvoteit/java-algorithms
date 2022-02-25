@@ -7,7 +7,7 @@ public class MaximumSubarray {
   }
 
   // time O(n) space O(1)
-  static class V1 {
+  static class V1 extends MaximumSubarray {
     public int maxSubArray(int[] nums) {
       int sum = nums[0], temp = 0;
 

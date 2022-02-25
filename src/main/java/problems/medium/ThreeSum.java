@@ -12,7 +12,7 @@ public class ThreeSum {
 
   // time O(n^2) space O(n)
   // two-pointers + binary search refactor
-  static class V2 {
+  static class V2 extends ThreeSum {
     public List<List<Integer>> threeSum(int[] nums) {
       Arrays.sort(nums);
       List<List<Integer>> triplets = new ArrayList<>();

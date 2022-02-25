@@ -7,7 +7,7 @@ public class BinarySearch {
   }
 
   // time O(log n) space O(1)
-  static class V1 {
+  static class V1 extends BinarySearch {
     public int search(int[] nums, int target) {
       int left = 0, right = nums.length - 1;
 

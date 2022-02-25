@@ -7,7 +7,7 @@ public class TwoSumIIInputArrayIsSorted {
   }
 
   // time O(n) space O(1)
-  static class V1 {
+  static class V1 extends TwoSumIIInputArrayIsSorted {
     public int[] twoSum(int[] nums, int target) {
       int left = 0, right = nums.length - 1;
 
