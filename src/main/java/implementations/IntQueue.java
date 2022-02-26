@@ -2,41 +2,43 @@ package implementations;
 
 public final class IntQueue {
   // FIFO - offer to the end, poll from the front
-  private final int[] entries;
-  private int index = -1;
+  private final int[] items;
+  private int size = -1;
 
   public IntQueue(int capacity) {
-    entries = new int[capacity];
+    items = new int[capacity];
   }
 
-  public final int capacity() {
-    return entries.length;
+  public final int getCapacity() {
+    return items.length;
   }
 
-  public final int size() {
-    return index + 1;
+  public final int getSize() {
+    return size + 1;
   }
 
   public final void offer(int i) {
-    entries[++index] = i;
+    items[++size] = i;
   }
 
   public final int peek() {
-    return entries[0];
+    return items[0];
   }
 
   public final int poll() {
-    int value = entries[0];
+    int item = items[0];
     redistribute();
 
-    return value;
+    return item;
   }
 
   private void redistribute() {
-    if (size() == 0) return;
+    if (getSize() == 0) return;
 
-    int i = 0;
-    while (i <= size()) entries[i] = entries[++i];
-    index--;
+    int index = 0;
+    while (index <= getSize()) {
+      items[index] = items[++index];
+    }
+    this.size--;
   }
 }

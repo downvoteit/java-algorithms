@@ -11,6 +11,6 @@ class Pair<K, V> {
 
   @Override
   public String toString() {
-    return "Pair{" + key + ":" + value + '}';
+    return key + ":" + value;
   }
 }

@@ -29,8 +29,8 @@ class IntStackTest {
       stack.push(i);
     }
 
-    while (stack.size() > 0) { // pop
-      actual[actual.length - stack.size()] = stack.pop();
+    while (stack.getSize() > 0) { // pop
+      actual[actual.length - stack.getSize()] = stack.pop();
     }
 
     System.out.println(Arrays.toString(expected));

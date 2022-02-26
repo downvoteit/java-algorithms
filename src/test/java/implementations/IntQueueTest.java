@@ -29,8 +29,8 @@ class IntQueueTest {
       queue.offer(i);
     }
 
-    while (queue.size() > 0) { // poll
-      actual[actual.length - queue.size()] = queue.poll();
+    while (queue.getSize() > 0) { // poll
+      actual[actual.length - queue.getSize()] = queue.poll();
     }
 
     System.out.println(Arrays.toString(expected));
