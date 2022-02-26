@@ -7,6 +7,7 @@ public class FindPeakElement {
   }
 
   // time O(log n) space O(1)
+  // bitonic array
   static class V2 extends FindPeakElement {
     public int findPeakElement(int[] nums) {
       int left = 0, right = nums.length - 1;

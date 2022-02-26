@@ -6,6 +6,8 @@ public class PeakIndexInAMountainArray {
     return new V3().peakIndexInMountainArray(arr);
   }
 
+  // time O(log n) space O(1)
+  // bitonic array
   static class V3 extends PeakIndexInAMountainArray {
     public int peakIndexInMountainArray(int[] arr) {
       int left = 0, right = arr.length - 1;
