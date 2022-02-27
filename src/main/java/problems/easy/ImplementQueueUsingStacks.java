@@ -26,10 +26,10 @@ public class ImplementQueueUsingStacks {
     }
 
     private void redistribute() {
-      if (getSize() == 0) return;
+      if (size == -1) return;
 
       int index = 0;
-      while (index <= getSize()) {
+      while (index <= size + 1) {
         items[index] = items[++index];
       }
       this.size--;

@@ -29,6 +29,10 @@ class IntStackTest {
       stack.push(i);
     }
 
+    if (nums.length > 0) { // get
+      Assertions.assertEquals(stack.get(), nums[nums.length - 1]);
+    }
+
     while (stack.getSize() > 0) { // pop
       actual[actual.length - stack.getSize()] = stack.pop();
     }

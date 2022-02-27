@@ -29,6 +29,10 @@ class IntQueueTest {
       queue.offer(i);
     }
 
+    if (nums.length > 0) { // peek
+      Assertions.assertEquals(queue.peek(), nums[0]);
+    }
+
     while (queue.getSize() > 0) { // poll
       actual[actual.length - queue.getSize()] = queue.poll();
     }

@@ -2,13 +2,13 @@ package implementations;
 
 import java.util.Arrays;
 
-// https://leetcode.com/explore/learn/card/heap/
-// https://www.youtube.com/watch?v=t0Cq6tVNRBA&list=WL&index=30&ab_channel=HackerRank
-public final class IntMinHeap {
-  // Min queue
-  // parent: (index - 1) / 2
-  // left; index * 2 + 1
-  // right: index * 2 + 2
+// min queue
+// parent: (index - 1) / 2
+// left; index * 2 + 1
+// right: index * 2 + 2
+// time O(1) best case
+// time O(log n) worst case
+public class IntMinHeap {
   private int capacity = 10;
   private int size = 0;
 

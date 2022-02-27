@@ -1,7 +1,10 @@
 package implementations;
 
-public final class IntQueue {
-  // FIFO - offer to the end, poll from the front
+// fifo queue
+// offer to the end, poll from the front
+// time O(1) for offer, peek, poll
+// time O(n) for redistribute
+public class IntQueue {
   private final int[] items;
   private int size = -1;
 
@@ -9,23 +12,19 @@ public final class IntQueue {
     items = new int[capacity];
   }
 
-  public final int getCapacity() {
-    return items.length;
-  }
-
-  public final int getSize() {
+  public int getSize() {
     return size + 1;
   }
 
-  public final void offer(int i) {
+  public void offer(int i) {
     items[++size] = i;
   }
 
-  public final int peek() {
+  public int peek() {
     return items[0];
   }
 
-  public final int poll() {
+  public int poll() {
     int item = items[0];
     redistribute();
 
@@ -33,12 +32,12 @@ public final class IntQueue {
   }
 
   private void redistribute() {
-    if (getSize() == 0) return;
+    if (size == -1) return;
 
     int index = 0;
-    while (index <= getSize()) {
+    while (index <= size + 1) {
       items[index] = items[++index];
     }
-    this.size--;
+    size--;
   }
 }

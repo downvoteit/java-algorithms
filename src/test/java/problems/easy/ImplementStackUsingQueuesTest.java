@@ -1,7 +1,18 @@
 package problems.easy;
 
-/**
- * Your MyStack object will be instantiated and called as such: MyStack obj = new MyStack();
- * obj.push(x); int param_2 = obj.pop(); int param_3 = obj.top(); boolean param_4 = obj.empty();
- */
-class ImplementStackUsingQueuesTest {}
+import org.junit.jupiter.api.Assertions;
+import org.junit.jupiter.api.Test;
+
+class ImplementStackUsingQueuesTest {
+  @Test
+  public void positiveTest() {
+    ImplementStackUsingQueues.MyStack myStack = new ImplementStackUsingQueues().new MyStack();
+
+    myStack.push(1);
+    myStack.push(2);
+    Assertions.assertEquals(myStack.top(), 2);
+    myStack.pop();
+    Assertions.assertEquals(myStack.top(), 1);
+    Assertions.assertFalse(myStack.empty());
+  }
+}
