@@ -3,6 +3,7 @@
 ## 184. Department Highest Salary (Medium)
 
 - https://leetcode.com/problems/department-highest-salary/
+- Oracle, with-as, group by, no joins
 
 ```
 with s1 as(
