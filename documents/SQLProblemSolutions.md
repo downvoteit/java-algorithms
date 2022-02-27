@@ -3,9 +3,8 @@
 ## 184. Department Highest Salary (Medium)
 
 - https://leetcode.com/problems/department-highest-salary/
-- https://livesql.oracle.com/
 
-```oracle
+```
 with s1 as(
     select t.departmentId, max(t.salary) max_salary
       from Employee t

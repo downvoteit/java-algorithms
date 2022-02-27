@@ -2,7 +2,7 @@
 
 ## Purpose 
 
-- Learn and prepare for algorithm interviews using Java
+- Learn and prepare for algorithm interviews using Java (or SQL)
 
 ## Learning resources
 
@@ -30,6 +30,12 @@
   - https://maven.apache.org/guides/
 - JUnit 5 docs
   - https://junit.org/junit5/docs/current/user-guide
+- Oracle SQL documentation
+  - https://docs.oracle.com/en/database/oracle/oracle-database/19/sqlrf/
+- ORACLE-BASE forum
+  - https://oracle-base.com/
+- Oracle Live SQL cloud database
+  - https://livesql.oracle.com/
 
 ## General Patterns
 
