@@ -5,6 +5,7 @@ import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.Arguments;
 import org.junit.jupiter.params.provider.MethodSource;
 
+import java.time.Duration;
 import java.util.stream.Stream;
 
 import static org.junit.jupiter.params.provider.Arguments.arguments;
@@ -20,7 +21,10 @@ class NumberOfConnectedComponentsInAnUndirectedGraphTest {
   @ParameterizedTest
   @MethodSource("source")
   public void positiveTest(int n, int[][] edges, int expected) {
-    int actual = new NumberOfConnectedComponentsInAnUndirectedGraph().countComponents(n, edges);
+    int actual =
+        Assertions.assertTimeoutPreemptively(
+            Duration.ofMillis(50),
+            () -> new NumberOfConnectedComponentsInAnUndirectedGraph().countComponents(n, edges));
 
     Assertions.assertEquals(expected, actual);
   }

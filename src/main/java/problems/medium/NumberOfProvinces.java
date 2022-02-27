@@ -7,7 +7,7 @@ public class NumberOfProvinces {
   }
 
   static class V1 extends NumberOfProvinces {
-    private static int find(int[] rep, int v) {
+    public int findCircleNum(int[][] isConnected) {
       return 0;
     }
   }

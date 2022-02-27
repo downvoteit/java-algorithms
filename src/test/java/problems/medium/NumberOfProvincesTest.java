@@ -5,6 +5,7 @@ import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.Arguments;
 import org.junit.jupiter.params.provider.MethodSource;
 
+import java.time.Duration;
 import java.util.stream.Stream;
 
 import static org.junit.jupiter.params.provider.Arguments.arguments;
@@ -19,7 +20,9 @@ class NumberOfProvincesTest {
   @ParameterizedTest
   @MethodSource("source")
   public void positiveTest(int[][] isConnected, int expected) {
-    int actual = new NumberOfProvinces().findCircleNum(isConnected);
+    int actual =
+        Assertions.assertTimeoutPreemptively(
+            Duration.ofMillis(50), () -> new NumberOfProvinces().findCircleNum(isConnected));
 
     Assertions.assertEquals(expected, actual);
   }
