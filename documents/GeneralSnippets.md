@@ -167,5 +167,86 @@ while (left <= right) {
 ## Union-find count connected components
 
 ```
+int m, n;
+int[] vertices, edges;
 
+public int unionFind(int[][] isConnected) {
+    m = n = isConnected.length;
+    
+    vertices = new int[m];
+    size = new int[m];
+    for (int i = 0; i < m; i++) {
+        vertices[i] = i;
+        size[i] = 1;
+    }
+    
+    for (int i = 0; i < m - 1; i++)
+        for (int j = i + 1; j < m; j++) {
+          if (isConnected[i][j] == 1) union(i, j);
+        }
+    
+    return n;
+}
+
+private void union(int p, int q) {
+    int i = find(p), j = find(q);
+    
+    if (i == j) return;
+    
+    if (size[i] < size[j]) {
+        vertices[i] = j;
+        size[j] += size[i];
+    } else {
+        vertices[j] = i;
+        size[i] += size[j];
+    }
+    n--;
+}
+
+private int find(int p) {
+    while (p != vertices[p]) {
+        p = vertices[p];
+    }
+    
+    return p;
+}
+```
+
+## Find Linked list cycle
+
+```
+ListNode fast = head, slow = head;
+
+while (fast != null && fast.next != null) {
+    fast = fast.next.next;
+    slow = slow.next;
+    
+    if (slow == fast) return true;
+}
+
+return false;
+```
+
+## Find Linked list length
+
+```
+int listLen = 0;
+...
+do {
+    pointer1 = pointer1.next;
+    listLen++;
+} while (pointer.next == null && pointer.next != null);
+```
+
+## Find Linked list middle
+
+```
+ListNode fast = head, slow = head;
+
+while (fast != null && fast.next != null) {
+    fast = fast.next.next;
+    slow = slow.next;
+}
+
+return slow;
 ```

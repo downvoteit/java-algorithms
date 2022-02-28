@@ -14,7 +14,8 @@ class NumberOfProvincesTest {
   static Stream<Arguments> source() {
     return Stream.of(
         arguments(new int[][] {{1, 1, 0}, {1, 1, 0}, {0, 0, 1}}, 2),
-        arguments(new int[][] {{1, 0, 0}, {0, 1, 0}, {0, 0, 1}}, 3));
+        arguments(new int[][] {{1, 0, 0}, {0, 1, 0}, {0, 0, 1}}, 3),
+        arguments(new int[][] {{1, 0, 0, 1}, {0, 1, 1, 0}, {0, 1, 1, 1}, {1, 0, 1, 1}}, 1));
   }
 
   @ParameterizedTest

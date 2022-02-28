@@ -1,29 +1,34 @@
 package problems.easy;
 
+import converters.StringToIntArray;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.params.ParameterizedTest;
-import org.junit.jupiter.params.provider.Arguments;
-import org.junit.jupiter.params.provider.MethodSource;
-
-import java.util.stream.Stream;
-
-import static org.junit.jupiter.params.provider.Arguments.arguments;
+import org.junit.jupiter.params.converter.ConvertWith;
+import org.junit.jupiter.params.provider.CsvFileSource;
 
 class LinkedListCycleTest {
-  static Stream<Arguments> source() {
-    return Stream.of(
-        arguments(new int[] {3, 2, 0, -4}, 1, true),
-        arguments(new int[] {1, 2}, 0, true),
-        arguments(new int[] {1}, -1, false));
-  }
-
   @ParameterizedTest
-  @MethodSource("source")
-  public void positiveTest(int[] nums, int pos, boolean expected) {
-    LinkedListCycle.ListNode head = new LinkedListCycle().new ListNode(1);
+  @CsvFileSource(
+      resources = "/problems/LinkedListCycleTest.csv",
+      numLinesToSkip = 1,
+      delimiter = ';')
+  public void positiveTest(
+      @ConvertWith(StringToIntArray.class) int[] nums, int pos, boolean expected) {
+    LinkedListCycle.ListNode head = new LinkedListCycle().new ListNode(nums[0]);
+    LinkedListCycle.ListNode tail = head;
 
-    boolean actual = new LinkedListCycle().hasCycle(head);
+    LinkedListCycle.ListNode[] nodes = new LinkedListCycle.ListNode[nums.length];
+    nodes[0] = head;
 
-    Assertions.assertEquals(expected, actual);
+    for (int i = 1; i < nums.length; i++) {
+      tail.next = new LinkedListCycle().new ListNode(nums[i]);
+      tail = tail.next;
+
+      nodes[i] = tail;
+    }
+
+    if (pos >= 0) tail.next = nodes[pos];
+
+    Assertions.assertEquals(expected, new LinkedListCycle().hasCycle(head));
   }
 }
