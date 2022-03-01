@@ -29,9 +29,13 @@ class LinkedListCycleIITest {
     if (expected >= 0) {
       tail.next = nodes[expected];
 
-      Assertions.assertEquals(nodes[expected], new LinkedListCycleII().detectCycle(head));
+      LinkedListCycleII.ListNode actual = new LinkedListCycleII().detectCycle(head);
+
+      Assertions.assertEquals(nodes[expected], actual);
     } else {
-      Assertions.assertNull(new LinkedListCycleII().detectCycle(head));
+      LinkedListCycleII.ListNode actual = new LinkedListCycleII().detectCycle(head);
+
+      Assertions.assertNull(actual);
     }
   }
 }

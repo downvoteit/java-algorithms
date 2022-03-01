@@ -250,3 +250,16 @@ while (fast != null && fast.next != null) {
 
 return slow;
 ```
+
+## Check if a String/StringBuilder is palindrome (two pointers)
+
+```
+int n = s.length();
+
+for (int i = 0; i < n / 2; i++) 
+    if (s.charAt(i) != s.charAt(n - 1 - i)) {
+        return false;
+    }
+
+return true;
+```

@@ -29,6 +29,8 @@ class LinkedListCycleTest {
 
     if (pos >= 0) tail.next = nodes[pos];
 
-    Assertions.assertEquals(expected, new LinkedListCycle().hasCycle(head));
+    boolean actual = new LinkedListCycle().hasCycle(head);
+
+    Assertions.assertEquals(expected, actual);
   }
 }
