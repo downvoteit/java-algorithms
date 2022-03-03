@@ -39,6 +39,7 @@ public class LinkedListCycleII {
         pointer2 = pointer2.next;
         cycleLen--;
       }
+
       while (pointer1 != pointer2) {
         pointer1 = pointer1.next;
         pointer2 = pointer2.next;
