@@ -6,7 +6,14 @@ import java.util.List;
 // https://leetcode.com/problems/remove-linked-list-elements/
 public class RemoveLinkedListElements {
   public ListNode removeElements(ListNode head, int val) {
-    return new V1().removeElements(head, val);
+    return new V2().removeElements(head, val);
+  }
+
+  // time O(n) space O(1)
+  static class V2 extends RemoveLinkedListElements {
+    public ListNode removeElements(ListNode head, int val) {
+      return null;
+    }
   }
 
   // time O(n) space O(n)

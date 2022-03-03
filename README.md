@@ -22,6 +22,8 @@
     - https://www.geeksforgeeks.org
 - Leetcode Problems
   - https://leetcode.com/problemset/all
+- Leetcode Explore
+  - https://leetcode.com/explore/
 - Leetcode Problems organized by patterns
   - https://seanprashad.com/leetcode-patterns
 - Oracle Java docs
