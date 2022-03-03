@@ -31,10 +31,9 @@ public class LinkedListCycleII {
         }
       }
 
-      System.out.println(cycleLen);
+      if (cycleLen == 0) return null;
 
       // find start
-      if (cycleLen == 0) return null;
       ListNode pointer1 = head, pointer2 = head;
       while (cycleLen > 0) {
         pointer2 = pointer2.next;

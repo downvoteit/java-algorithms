@@ -17,18 +17,14 @@ public class RemoveLinkedListElements {
       List<Integer> values = new ArrayList<>();
 
       while (current != null) {
-        if (current.val != val && current.val != 0) {
-          values.add(current.val);
-        }
+        if (current.val != val && current.val != 0) values.add(current.val);
 
         current = current.next;
       }
 
       if (values.size() == 0) return null;
 
-      ListNode newHead = new ListNode(values.get(0));
-      ListNode newTail = newHead;
-
+      ListNode newHead = new ListNode(values.get(0)), newTail = newHead;
       for (int i = 1; i < values.size(); i++) {
         newTail.next = new ListNode(values.get(i));
         newTail = newTail.next;
