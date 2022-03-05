@@ -1,49 +1,54 @@
-package problems.easy;
+package problems.medium;
 
-import java.util.ArrayList;
-import java.util.LinkedList;
-import java.util.List;
-import java.util.Queue;
+import java.util.*;
 
-// https://leetcode.com/problems/average-of-levels-in-binary-tree/
-public class AverageOfLevelsInBinaryTree {
-  public List<Double> averageOfLevels(TreeNode root) {
-    return new V1().averageOfLevels(root);
+// https://leetcode.com/problems/binary-tree-zigzag-level-order-traversal/
+public class BinaryTreeZigzagLevelOrderTraversal {
+  public List<List<Integer>> zigzagLevelOrder(TreeNode root) {
+    return new V1().zigzagLevelOrder(root);
   }
 
   // time O(n) space O(n)
-  static class V1 extends AverageOfLevelsInBinaryTree {
-    public List<Double> averageOfLevels(TreeNode root) {
-      List<Double> output = new ArrayList<>();
+  // left-to-right then right-to-left
+  static class V1 extends BinaryTreeZigzagLevelOrderTraversal {
+    public List<List<Integer>> zigzagLevelOrder(TreeNode root) {
+      List<List<Integer>> output = new ArrayList<>();
 
       if (root == null) return output;
 
       Queue<TreeNode> queue = new LinkedList<>();
       queue.offer(root);
 
+      boolean leftToRight = true;
+
       while (!queue.isEmpty()) {
         int levelSize = queue.size();
-        long levelSum = 0;
+        Integer[] temp = new Integer[levelSize];
 
         for (int i = 0; i < levelSize; i++) {
           TreeNode node = queue.poll();
 
           if (node == null) continue;
 
-          levelSum += node.val;
+          if (leftToRight) {
+            temp[i] = node.val;
+          } else {
+            temp[temp.length - 1 - i] = node.val;
+          }
 
           if (node.left != null) queue.offer(node.left);
           if (node.right != null) queue.offer(node.right);
         }
 
-        output.add(((double) levelSum / levelSize));
+        output.add(Arrays.asList(temp));
+        leftToRight = !leftToRight;
       }
 
       return output;
     }
   }
 
-  class TreeNode {
+  public class TreeNode {
     int val;
     TreeNode left;
     TreeNode right;

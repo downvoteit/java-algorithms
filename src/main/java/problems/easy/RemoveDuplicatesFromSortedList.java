@@ -9,14 +9,9 @@ public class RemoveDuplicatesFromSortedList {
     return new V2().deleteDuplicates(head);
   }
 
+  // time O(n) space O(1)
   static class V2 extends RemoveDuplicatesFromSortedList {
     public ListNode deleteDuplicates(ListNode head) {
-      ListNode current = head;
-
-      while (current != null) {
-        current = current.next;
-      }
-
       return null;
     }
   }

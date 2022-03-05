@@ -10,17 +10,17 @@ public class PalindromeLinkedList {
   // two pointers
   static class V1 extends PalindromeLinkedList {
     public boolean isPalindrome(ListNode head) {
-      StringBuilder s = new StringBuilder();
+      StringBuilder sb = new StringBuilder();
 
       ListNode pointer = head;
       while (pointer != null) {
-        s.append(pointer.val);
+        sb.append(pointer.val);
 
         pointer = pointer.next;
       }
 
-      for (int i = 0; i < s.length() / 2; i++)
-        if (s.charAt(i) != s.charAt(s.length() - 1 - i)) {
+      for (int i = 0; i < sb.length() / 2; i++)
+        if (sb.charAt(i) != sb.charAt(sb.length() - 1 - i)) {
           return false;
         }
 

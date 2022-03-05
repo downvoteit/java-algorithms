@@ -75,16 +75,16 @@ public class ParallelArrayHashtable<K, V> {
 
   @Override
   public String toString() {
-    StringBuilder s = new StringBuilder("Hashtable[");
+    StringBuilder sb = new StringBuilder("Hashtable[");
     for (int i = 0; i < capacity; i++) {
-      if (i > 0) s.append(", ");
+      if (i > 0) sb.append(", ");
       if (keys[i] != null) {
-        s.append("[").append(keys[i]).append(":").append(values[i]).append("]");
+        sb.append("[").append(keys[i]).append(":").append(values[i]).append("]");
       } else {
-        s.append("[]");
+        sb.append("[]");
       }
     }
 
-    return s.append("]").toString();
+    return sb.append("]").toString();
   }
 }

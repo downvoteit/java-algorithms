@@ -1,20 +1,20 @@
-package problems.easy;
+package problems.medium;
 
 import java.util.ArrayList;
 import java.util.LinkedList;
 import java.util.List;
 import java.util.Queue;
 
-// https://leetcode.com/problems/average-of-levels-in-binary-tree/
-public class AverageOfLevelsInBinaryTree {
-  public List<Double> averageOfLevels(TreeNode root) {
-    return new V1().averageOfLevels(root);
+// https://leetcode.com/problems/binary-tree-level-order-traversal-ii/
+public class BinaryTreeLevelOrderTraversalII {
+  public List<List<Integer>> levelOrderBottom(TreeNode root) {
+    return new V1().levelOrderBottom(root);
   }
 
   // time O(n) space O(n)
-  static class V1 extends AverageOfLevelsInBinaryTree {
-    public List<Double> averageOfLevels(TreeNode root) {
-      List<Double> output = new ArrayList<>();
+  static class V1 extends BinaryTreeLevelOrderTraversalII {
+    public List<List<Integer>> levelOrderBottom(TreeNode root) {
+      LinkedList<List<Integer>> output = new LinkedList<>();
 
       if (root == null) return output;
 
@@ -23,27 +23,27 @@ public class AverageOfLevelsInBinaryTree {
 
       while (!queue.isEmpty()) {
         int levelSize = queue.size();
-        long levelSum = 0;
+        List<Integer> temp = new ArrayList<>(levelSize);
 
         for (int i = 0; i < levelSize; i++) {
           TreeNode node = queue.poll();
 
           if (node == null) continue;
 
-          levelSum += node.val;
+          temp.add(node.val);
 
           if (node.left != null) queue.offer(node.left);
           if (node.right != null) queue.offer(node.right);
         }
 
-        output.add(((double) levelSum / levelSize));
+        if (temp.size() > 0) output.addFirst(temp);
       }
 
       return output;
     }
   }
 
-  class TreeNode {
+  public class TreeNode {
     int val;
     TreeNode left;
     TreeNode right;

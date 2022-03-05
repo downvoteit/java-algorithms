@@ -1,5 +1,30 @@
 # Singly Linked Lists Snippets
 
+## Example ListNode
+
+```
+public class ListNode {
+    int val;
+    ListNode next;
+
+    ListNode() {}
+
+    ListNode(int val) {
+      this.val = val;
+    }
+
+    ListNode(int val, ListNode next) {
+      this.val = val;
+      this.next = next;
+    }
+
+    @Override
+    public String toString() {
+      return val + " " + next;
+    }
+  }
+```
+
 ## Find cycle
 
 ```
@@ -15,11 +40,11 @@ while (fast != null && fast.next != null) {
 return false;
 ```
 
-## Find start of a cycle
+## Find start of a cycle (Floyd's cycle detection algorithm)
 
 ```
-// 1 - determine if a cycle if found
-// 2 - determine cycle length
+// 1 - determine if a cycle if found (k)
+// 2 - determine cycle length (l)
 ...
 if (cycleLen == 0) return null;
 

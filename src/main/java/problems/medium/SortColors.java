@@ -6,7 +6,7 @@ public class SortColors {
     new V1().sortColors(nums);
   }
 
-  static class V1 {
+  static class V1 extends SortColors {
     public void sortColors(int[] nums) {}
   }
 }
