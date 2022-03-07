@@ -45,7 +45,7 @@ private TreeNode arrayToTree(Integer[] input, int i) {
 }
 ```
 
-## Alternate order of array population (left-to-right then right-to-left)
+## BFS alternate order of array population (left-to-right then right-to-left)
 
 ```
 Integer[] temp = new Integer[levelSize];
