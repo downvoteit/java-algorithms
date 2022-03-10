@@ -1,4 +1,4 @@
-package problems.medium.depthfirstsearch;
+package problems.medium.disjointsets;
 
 import implementations.QuickUnionUndirectedTree;
 

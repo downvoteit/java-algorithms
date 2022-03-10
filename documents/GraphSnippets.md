@@ -56,3 +56,27 @@ if (leftToRight) {
     temp[temp.length - 1 - i] = node.val;
 }
 ```
+
+### DFS recursive preorder traversal
+
+```
+visited.add(node.val);
+recurse(node.left, visited);
+recurse(node.right, visited);
+```
+
+### DFS recursive inorder traversal
+
+```
+recurse(node.left, visited);
+visited.add(node.val);
+recurse(node.right, visited);
+````
+
+### DFS recursive postorder traversal
+
+```
+recurse(node.left, visited);
+recurse(node.right, visited);
+visited.add(node.val);
+````

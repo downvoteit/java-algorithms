@@ -46,7 +46,7 @@ public class BinaryTreePostorderTraversal {
 
     @Override
     public String toString() {
-      return "" + val;
+      return "{" + "v=" + val + ", l=" + left + ", r=" + right + '}';
     }
   }
 }

@@ -63,12 +63,7 @@ public class AverageOfLevelsInBinaryTree {
 
     @Override
     public String toString() {
-      StringBuilder sb = new StringBuilder().append(val);
-
-      if (left != null) sb.append(", left=").append(left);
-      if (right != null) sb.append(", right=").append(right);
-
-      return sb.toString();
+      return "{" + "v=" + val + ", l=" + left + ", r=" + right + '}';
     }
   }
 }

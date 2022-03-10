@@ -33,7 +33,7 @@ public class PathSumII {
 
     @Override
     public String toString() {
-      return "" + val;
+      return "{" + "v=" + val + ", l=" + left + ", r=" + right + '}';
     }
   }
 }
