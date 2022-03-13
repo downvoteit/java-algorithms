@@ -6,9 +6,21 @@ public class SymmetricTree {
     return new V1().isSymmetric(root);
   }
 
+  // time O(n) space O(1)
+  // two-tree approach
   static class V1 extends SymmetricTree {
     public boolean isSymmetric(TreeNode root) {
-      return false;
+      return recurse(root, root);
+    }
+
+    private boolean recurse(TreeNode tree, TreeNode antiTree) {
+      if (tree == null && antiTree == null) return true; // both reached their leafs
+      if (tree == null || antiTree == null) return false; // either one reached a leaf first
+
+      // check node values and traverse down both trees
+      return tree.val == antiTree.val
+          && recurse(tree.left, antiTree.right)
+          && recurse(tree.right, antiTree.left);
     }
   }
 

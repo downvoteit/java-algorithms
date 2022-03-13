@@ -30,12 +30,16 @@ public class PathSum {
       while (!stack.isEmpty()) {
         Temp temp = stack.pop();
 
-        if (temp.node.left == null && temp.node.right == null & temp.sum == 0) return true;
+        if (temp.node.left == null && temp.node.right == null & temp.sum == 0) {
+          return true;
+        }
 
-        if (temp.node.left != null)
+        if (temp.node.left != null) {
           stack.push(new Temp(temp.sum - temp.node.left.val, temp.node.left));
-        if (temp.node.right != null)
+        }
+        if (temp.node.right != null) {
           stack.push(new Temp(temp.sum - temp.node.right.val, temp.node.right));
+        }
       }
 
       return false;

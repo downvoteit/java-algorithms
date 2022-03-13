@@ -1,4 +1,4 @@
-package problems.easy.greedy;
+package problems.easy.slidingwindow;
 
 // https://leetcode.com/problems/maximum-subarray/
 public class MaximumSubarray {

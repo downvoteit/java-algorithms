@@ -22,7 +22,9 @@ public class MaximumDepthOfBinaryTree {
     private void recurse(TreeNode node, int depth) {
       if (node == null) return;
 
-      if (node.left == null && node.right == null) max = Math.max(max, depth);
+      if (node.left == null && node.right == null) {
+        max = Math.max(max, depth);
+      }
 
       recurse(node.left, depth + 1);
       recurse(node.right, depth + 1);

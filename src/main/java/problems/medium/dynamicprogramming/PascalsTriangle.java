@@ -9,6 +9,7 @@ public class PascalsTriangle {
     return new V1().generate(numRows);
   }
 
+  // time O(n^2) space O(n)
   static class V1 extends PascalsTriangle {
     public List<List<Integer>> generate(int numRows) {
       List<List<Integer>> output = new ArrayList<>();

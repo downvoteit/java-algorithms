@@ -1,13 +1,19 @@
-package problems.easy.greedy;
+package problems.easy.slidingwindow;
 
 // https://leetcode.com/problems/best-time-to-buy-and-sell-stock/
 public class BestTimeToBuyAndSellStock {
   public int maxProfit(int[] prices) {
-    return new V1().maxProfit(prices);
+    return new V2().maxProfit(prices);
+  }
+
+  static class V2 extends BestTimeToBuyAndSellStock {
+    public int maxProfit(int[] prices) {
+      return 0;
+    }
   }
 
   // time O(n^2) space O(1)
-  // greedy, dynamic programming, brute-force
+  // greedy, brute-force
   // Time Limit Exceeded
   static class V1 extends BestTimeToBuyAndSellStock {
     public int maxProfit(int[] prices) {

@@ -1,5 +1,7 @@
 package problems.easy.depthfirstsearch;
 
+import java.util.PriorityQueue;
+
 // https://leetcode.com/problems/minimum-depth-of-binary-tree/
 public class MinimumDepthOfBinaryTree {
   public int minDepth(TreeNode root) {
@@ -7,25 +9,21 @@ public class MinimumDepthOfBinaryTree {
   }
 
   static class V1 extends MinimumDepthOfBinaryTree {
-    int min = 1;
+    PriorityQueue<Integer> routes = new PriorityQueue<>(Integer::compareTo);
 
     public int minDepth(TreeNode root) {
       if (root == null) return 0;
 
-      //      System.out.println(root);
+      recurse(root, 1);
 
-      recurse(root, min);
-
-      return min;
+      return !routes.isEmpty() ? routes.poll() : 0;
     }
 
     private void recurse(TreeNode node, int depth) {
       if (node == null) return;
 
       if (node.left == null && node.right == null) {
-        //        System.out.println(node.val + " " + depth);
-
-        min = Math.min(min, depth);
+        routes.add(depth);
       }
 
       recurse(node.left, depth + 1);

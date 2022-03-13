@@ -1,4 +1,4 @@
-package problems.easy.unsolved;
+package problems.easy.design;
 
 // https://leetcode.com/problems/design-hashmap/
 public class DesignHashMap {
