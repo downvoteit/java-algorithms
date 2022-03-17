@@ -6,9 +6,21 @@ public class BestTimeToBuyAndSellStock {
     return new V2().maxProfit(prices);
   }
 
+  // time O(n) space O(1)
+  // sliding window, greedy, single loop
   static class V2 extends BestTimeToBuyAndSellStock {
     public int maxProfit(int[] prices) {
-      return 0;
+      int winStart = 0, max = 0;
+
+      for (int winEnd = 1; winEnd < prices.length; winEnd++) {
+        if (prices[winStart] > prices[winEnd]) { // found a new low on the right
+          winStart = winEnd; // update the left with the new low value
+        }
+
+        max = Math.max(max, prices[winEnd] - prices[winStart]);
+      }
+
+      return max;
     }
   }
 

@@ -1,35 +1,89 @@
 package problems.hard.slidingwindow;
 
-import java.util.ArrayList;
-import java.util.LinkedList;
-import java.util.List;
-import java.util.Queue;
+import java.util.*;
 
 // https://leetcode.com/problems/sliding-window-maximum/
 public class SlidingWindowMaximum {
-  private static int[] listToArray(List<Integer> list) {
-    int[] output = new int[list.size()];
-    for (int i = 0; i < list.size(); i++) {
-      output[i] = list.get(i);
-    }
-
-    return output;
-  }
-
   public int[] maxSlidingWindow(int[] nums, int k) {
-    return new V2().maxSlidingWindow(nums, k);
+    return new V3().maxSlidingWindow(nums, k);
   }
 
-  // monotonically decreasing queue
+  static class V3 extends SlidingWindowMaximum {
+    /*
+    time O(n*m) space O(n)
+    monotonically decreasing queue
+
+    deque methods
+
+    L              R
+    ^              ^
+    3, 3, 5, 5, 6, 7
+
+    for left/head
+      offerFirst/addFirst
+      pollFirst/removeFirst
+      peekFirst/getFirst
+
+    for right/tail
+      offerLast/addLast
+      pollLast/removeLast
+      peekLast/getLast
+
+    */
+    public int[] maxSlidingWindow(int[] nums, int k) {
+      int[] output = new int[nums.length - k + 1];
+
+      Deque<Integer> deque = new ArrayDeque<>();
+
+      int i = 0;
+
+      while (i < nums.length) {
+        // remove anything out of the window
+        if (!deque.isEmpty() && deque.peekFirst() == i - k) {
+          deque.pollFirst();
+        }
+
+        // remove the anything less than the current
+        while (!deque.isEmpty() && nums[deque.peekLast()] < nums[i]) {
+          deque.pollLast();
+        }
+
+        deque.offerLast(i);
+
+        if (i >= k - 1) {
+          if (!deque.isEmpty()) {
+            output[i - k + 1] = nums[deque.peekFirst()];
+          }
+        }
+
+        i++;
+      }
+
+      return output;
+    }
+  }
+
+  // time O(n*log n) space O(m)
+  // heap
+  // Time Limit Exceeded
   static class V2 extends SlidingWindowMaximum {
     public int[] maxSlidingWindow(int[] nums, int k) {
-      List<Integer> output = new ArrayList<>();
+      int[] output = new int[nums.length - k + 1];
+      PriorityQueue<Integer> heap = new PriorityQueue<>(k, Collections.reverseOrder());
 
-      Queue<Integer> queue = new LinkedList<>();
+      for (int i = 0; i < nums.length; i++) {
+        heap.offer(nums[i]);
 
-      for (int i = 0; i < nums.length; i++) {}
+        if (heap.size() >= k) {
+          if (!heap.isEmpty()) {
+            output[i + 1 - k] = heap.peek();
+          }
 
-      return listToArray(output);
+          heap.remove(nums[i + 1 - k]);
+        }
+      }
+
+      return output;
     }
   }
 
@@ -38,7 +92,7 @@ public class SlidingWindowMaximum {
   // Time Limit Exceeded
   static class V1 extends SlidingWindowMaximum {
     public int[] maxSlidingWindow(int[] nums, int k) {
-      List<Integer> output = new ArrayList<>();
+      List<Integer> list = new ArrayList<>();
 
       for (int i = 0; i <= nums.length - k; i++) {
         int max = Integer.MIN_VALUE;
@@ -46,10 +100,15 @@ public class SlidingWindowMaximum {
           max = Math.max(max, nums[j]);
         }
 
-        output.add(max);
+        list.add(max);
       }
 
-      return listToArray(output);
+      int[] output = new int[list.size()];
+      for (int i = 0; i < list.size(); i++) {
+        output[i] = list.get(i);
+      }
+
+      return output;
     }
   }
 }
