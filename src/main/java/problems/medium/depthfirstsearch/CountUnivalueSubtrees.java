@@ -6,9 +6,23 @@ public class CountUnivalueSubtrees {
     return new V1().countUnivalSubtrees(root);
   }
 
+  // time O(n) space O(h)
   static class V1 extends CountUnivalueSubtrees {
     public int countUnivalSubtrees(TreeNode root) {
-      return 0;
+      if (root == null) return 0;
+
+      return (isUnival(root) ? 1 : 0)
+          + countUnivalSubtrees(root.left)
+          + countUnivalSubtrees(root.right);
+    }
+
+    public boolean isUnival(TreeNode node) {
+      if (node == null) return false;
+
+      boolean left = node.left == null || node.left.val == node.val && isUnival(node.left);
+      boolean right = node.right == null || node.right.val == node.val && isUnival(node.right);
+
+      return left && right;
     }
   }
 

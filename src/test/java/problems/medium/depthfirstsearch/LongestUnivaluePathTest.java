@@ -10,29 +10,22 @@ import java.util.stream.Stream;
 
 import static org.junit.jupiter.params.provider.Arguments.arguments;
 
-class CountUnivalueSubtreesTest {
+class LongestUnivaluePathTest {
   static Stream<Arguments> source() {
     return Stream.of(
-        arguments(new Integer[] {5, 1, 5, 5, 5, null, 5}, 4),
-        arguments(new Integer[] {}, 0),
-        arguments(new Integer[] {5, 5, 5, 5, 5, null, 5}, 6),
-        arguments(new Integer[] {1, 1, 1, 5, 5, null, 5}, 3),
-        arguments(new Integer[] {5, 1, 3, 1, 1, 1}, 4),
-        arguments(
-            new Integer[] {
-              7, 82, 82, -79, 98, 98, -79, -79, null, -28, -24, -28, -24, null, -79, null, 97, 65,
-              -4, null, 3, -4, 65, 3, null, 97
-            },
-            8));
+        arguments(new Integer[] {5, 4, 5, 1, 1, 5}, 2),
+        arguments(new Integer[] {1, 4, 5, 4, 4, 5}, 2),
+        arguments(new Integer[] {1}, 0),
+        arguments(new Integer[] {1, 2}, 0));
   }
 
-  private CountUnivalueSubtrees.TreeNode arrayToTree(Integer[] input, int i) {
+  private LongestUnivaluePath.TreeNode arrayToTree(Integer[] input, int i) {
     if (i >= input.length || input[i] == null) return null;
 
     var leftNode = arrayToTree(input, i * 2 + 1);
     var rightNode = arrayToTree(input, i * 2 + 2);
 
-    return new CountUnivalueSubtrees().new TreeNode(input[i], leftNode, rightNode);
+    return new LongestUnivaluePath().new TreeNode(input[i], leftNode, rightNode);
   }
 
   @ParameterizedTest
@@ -42,7 +35,10 @@ class CountUnivalueSubtreesTest {
 
     int actual =
         Assertions.assertTimeoutPreemptively(
-            Duration.ofMillis(50), () -> new CountUnivalueSubtrees().countUnivalSubtrees(root));
+            Duration.ofMillis(50), () -> new LongestUnivaluePath().longestUnivaluePath(root));
+
+    System.out.println(expected);
+    System.out.println(actual);
 
     Assertions.assertEquals(expected, actual);
   }

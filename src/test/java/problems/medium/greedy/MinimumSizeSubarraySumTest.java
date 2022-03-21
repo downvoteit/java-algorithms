@@ -1,11 +1,10 @@
-package problems.medium.unsolved;
+package problems.medium.greedy;
 
 import converters.StringToIntArray;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.converter.ConvertWith;
 import org.junit.jupiter.params.provider.CsvFileSource;
-import problems.medium.greedy.MinimumSizeSubarraySum;
 
 class MinimumSizeSubarraySumTest {
   @ParameterizedTest
