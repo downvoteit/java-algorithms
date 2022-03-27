@@ -16,7 +16,8 @@ class LongestUnivaluePathTest {
         arguments(new Integer[] {5, 4, 5, 1, 1, 5}, 2),
         arguments(new Integer[] {1, 4, 5, 4, 4, 5}, 2),
         arguments(new Integer[] {1}, 0),
-        arguments(new Integer[] {1, 2}, 0));
+        arguments(new Integer[] {1, 2}, 0),
+        arguments(new Integer[] {1, 2, 2, 2, 2, 2}, 2));
   }
 
   private LongestUnivaluePath.TreeNode arrayToTree(Integer[] input, int i) {

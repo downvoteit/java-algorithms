@@ -94,11 +94,10 @@ public class LinkedListHashtable<K, V> {
         if (pair.key.equals(key)) {
           pair.value = value;
           found = true;
+          break;
         }
 
-      if (!found) {
-        bucket.add(new Pair<>(key, value));
-      }
+      if (!found) bucket.add(new Pair<>(key, value));
     }
 
     void remove(K key) {

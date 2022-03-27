@@ -10,9 +10,9 @@ class ImplementQueueUsingStacksTest {
 
     myStack.push(1);
     myStack.push(2);
-    Assertions.assertEquals(myStack.peek(), 1);
+    Assertions.assertEquals(1, myStack.peek());
     myStack.pop();
-    Assertions.assertEquals(myStack.peek(), 2);
+    Assertions.assertEquals(2, myStack.peek());
     Assertions.assertFalse(myStack.empty());
   }
 }

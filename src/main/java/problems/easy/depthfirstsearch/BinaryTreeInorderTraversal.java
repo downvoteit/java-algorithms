@@ -1,12 +1,37 @@
 package problems.easy.depthfirstsearch;
 
 import java.util.ArrayList;
+import java.util.LinkedList;
 import java.util.List;
 
 // https://leetcode.com/problems/binary-tree-inorder-traversal/
 public class BinaryTreeInorderTraversal {
   public List<Integer> inorderTraversal(TreeNode root) {
-    return new V1().inorderTraversal(root);
+    return new V2().inorderTraversal(root);
+  }
+
+  // time O(n) space O(n)
+  // DFS, iterative, inorder
+  static class V2 extends BinaryTreeInorderTraversal {
+    public List<Integer> inorderTraversal(TreeNode root) {
+      List<Integer> visited = new ArrayList<>();
+
+      LinkedList<TreeNode> stack = new LinkedList<>();
+      TreeNode current = root;
+
+      while (current != null || !stack.isEmpty()) {
+        while (current != null) {
+          stack.push(current);
+          current = current.left;
+        }
+
+        current = stack.pop();
+        visited.add(current.val);
+        current = current.right;
+      }
+
+      return visited;
+    }
   }
 
   // time O(n) space O(n)
