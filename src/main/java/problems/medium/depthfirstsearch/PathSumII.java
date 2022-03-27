@@ -9,6 +9,7 @@ public class PathSumII {
     return new V1().pathSum(root, targetSum);
   }
 
+  // time O(n^2) space O(n)
   static class V1 extends PathSumII {
     public List<List<Integer>> pathSum(TreeNode root, int targetSum) {
       List<List<Integer>> output = new ArrayList<>();
