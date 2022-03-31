@@ -6,6 +6,7 @@ public class DiameterOfBinaryTree {
     return new V1().diameterOfBinaryTree(root);
   }
 
+  // time O(n) space O(1)
   static class V1 extends DiameterOfBinaryTree {
     int diameter = 0;
 
