@@ -5,7 +5,6 @@ import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.Arguments;
 import org.junit.jupiter.params.provider.MethodSource;
 
-import java.util.Arrays;
 import java.util.stream.Stream;
 
 import static org.junit.jupiter.params.provider.Arguments.arguments;
@@ -24,9 +23,6 @@ class TwoSumTest {
   public void positiveTest(int[] nums, int target, int[] expected) {
     int[] actual = new TwoSum().twoSum(nums, target);
 
-    int expectedValue = Arrays.stream(expected).sum();
-    int actualValue = Arrays.stream(actual).sum();
-
-    Assertions.assertEquals(expectedValue, actualValue);
+    Assertions.assertArrayEquals(expected, actual);
   }
 }

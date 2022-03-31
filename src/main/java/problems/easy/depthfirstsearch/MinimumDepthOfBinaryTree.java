@@ -8,6 +8,7 @@ public class MinimumDepthOfBinaryTree {
     return new V1().minDepth(root);
   }
 
+  // time O(n) space O(n)
   static class V1 extends MinimumDepthOfBinaryTree {
     PriorityQueue<Integer> routes = new PriorityQueue<>(Integer::compareTo);
 
