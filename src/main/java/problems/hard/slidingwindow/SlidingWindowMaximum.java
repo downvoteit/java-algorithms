@@ -8,10 +8,10 @@ public class SlidingWindowMaximum {
     return new V3().maxSlidingWindow(nums, k);
   }
 
+  // time O(n*m) space O(n)
+  // monotonically decreasing queue
   static class V3 extends SlidingWindowMaximum {
     /*
-    time O(n*m) space O(n)
-    monotonically decreasing queue
 
     deque methods
 
@@ -50,11 +50,10 @@ public class SlidingWindowMaximum {
 
         deque.offerLast(i);
 
-        if (i >= k - 1) {
+        if (i >= k - 1)
           if (!deque.isEmpty()) {
             output[i - k + 1] = nums[deque.peekFirst()];
           }
-        }
 
         i++;
       }

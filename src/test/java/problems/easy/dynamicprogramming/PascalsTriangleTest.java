@@ -1,4 +1,4 @@
-package problems.medium.dynamicprogramming;
+package problems.easy.dynamicprogramming;
 
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.params.ParameterizedTest;
