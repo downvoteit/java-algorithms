@@ -20,9 +20,9 @@ class LongestUnivaluePathTest {
         arguments(createCase5Tree(), 2));
   }
 
-  private static CountUnivalueSubtrees.TreeNode createCase1Tree() {
-    CountUnivalueSubtrees top = new CountUnivalueSubtrees();
-    CountUnivalueSubtrees.TreeNode root = top.new TreeNode(5);
+  private static LongestUnivaluePath.TreeNode createCase1Tree() {
+    LongestUnivaluePath top = new LongestUnivaluePath();
+    LongestUnivaluePath.TreeNode root = top.new TreeNode(5);
     root.left = top.new TreeNode(4);
     root.left.left = top.new TreeNode(1);
     root.left.right = top.new TreeNode(1);
@@ -31,9 +31,9 @@ class LongestUnivaluePathTest {
     return root;
   }
 
-  private static CountUnivalueSubtrees.TreeNode createCase2Tree() {
-    CountUnivalueSubtrees top = new CountUnivalueSubtrees();
-    CountUnivalueSubtrees.TreeNode root = top.new TreeNode(1);
+  private static LongestUnivaluePath.TreeNode createCase2Tree() {
+    LongestUnivaluePath top = new LongestUnivaluePath();
+    LongestUnivaluePath.TreeNode root = top.new TreeNode(1);
     root.left = top.new TreeNode(4);
     root.left.left = top.new TreeNode(4);
     root.left.right = top.new TreeNode(4);
@@ -42,21 +42,21 @@ class LongestUnivaluePathTest {
     return root;
   }
 
-  private static CountUnivalueSubtrees.TreeNode createCase3Tree() {
-    CountUnivalueSubtrees top = new CountUnivalueSubtrees();
+  private static LongestUnivaluePath.TreeNode createCase3Tree() {
+    LongestUnivaluePath top = new LongestUnivaluePath();
     return top.new TreeNode(1);
   }
 
-  private static CountUnivalueSubtrees.TreeNode createCase4Tree() {
-    CountUnivalueSubtrees top = new CountUnivalueSubtrees();
-    CountUnivalueSubtrees.TreeNode root = top.new TreeNode(1);
+  private static LongestUnivaluePath.TreeNode createCase4Tree() {
+    LongestUnivaluePath top = new LongestUnivaluePath();
+    LongestUnivaluePath.TreeNode root = top.new TreeNode(1);
     root.left = top.new TreeNode(2);
     return root;
   }
 
-  private static CountUnivalueSubtrees.TreeNode createCase5Tree() {
-    CountUnivalueSubtrees top = new CountUnivalueSubtrees();
-    CountUnivalueSubtrees.TreeNode root = top.new TreeNode(1);
+  private static LongestUnivaluePath.TreeNode createCase5Tree() {
+    LongestUnivaluePath top = new LongestUnivaluePath();
+    LongestUnivaluePath.TreeNode root = top.new TreeNode(1);
     root.left = top.new TreeNode(2);
     root.left.left = top.new TreeNode(2);
     root.left.right = top.new TreeNode(2);

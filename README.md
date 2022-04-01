@@ -11,15 +11,15 @@
 - Introduction to Algorithms, 3rd Edition 
   - By Cormen et al.
 - Neetcode channel
-    - https://www.youtube.com/channel/UC_mYaQAE6-71rjSN6CeCA-g
-- Educative Grokking Dynamic Programming Patterns for Coding Interviews by Design Gurus
-    - https://www.educative.io/courses/grokking-the-coding-interview
+  - https://www.youtube.com/channel/UC_mYaQAE6-71rjSN6CeCA-g
 - Educative Grokking the Coding Interview: Patterns for Coding Questions by Design Gurus
+  - https://www.educative.io/courses/grokking-the-coding-interview
+- Educative Grokking Dynamic Programming Patterns for Coding Interviews by Design Gurus
   - https://www.educative.io/courses/grokking-dynamic-programming-patterns-for-coding-interviews
 - Educative Master Bit Manipulation for Coding Interviews
   - https://www.educative.io/courses/bit-manipulation
 - GeekForGeeks articles
-    - https://www.geeksforgeeks.org
+  - https://www.geeksforgeeks.org
 - Leetcode Problems
   - https://leetcode.com/problemset/all
 - Leetcode Explore
@@ -39,26 +39,61 @@
 - Oracle Live SQL cloud database
   - https://livesql.oracle.com/
 
-## General Patterns
+## Snippets
+
+- [General](documents/snippets/GeneralSnippets.md)
+- [Bit Manipulation](documents/snippets/BitManipulationSnippets.md)
+- [Tree and Graph](documents/snippets/TreeGraphSnippets.md)
+- [Singly Linked List](documents/snippets/SinglyLinkedListSnippets.md)
+
+## Patterns
 
 - Sliding Window
+  - [Easy problems](src/main/java/problems/easy/slidingwindow) [(and tests)](src/test/java/problems/easy/slidingwindow)
+  - [Medium problems](src/main/java/problems/medium/slidingwindow) [(and tests)](src/test/java/problems/medium/slidingwindow)
+  - [Hard problems](src/main/java/problems/hard/slidingwindow) [(and tests)](src/test/java/problems/hard/slidingwindow)
 - Two Pointers
+  - [Easy problems](src/main/java/problems/easy/twopointers) [(and tests)](src/test/java/problems/easy/twopointers)
+  - [Medium problems](src/main/java/problems/medium/twopointers) [(and tests)](src/test/java/problems/medium/twopointers)
 - Fast & Slow pointers
+  - [Easy problems](src/main/java/problems/easy/fastslowpointers) [(and tests)](src/test/java/problems/easy/fastslowpointers)
+  - [Medium problems](src/main/java/problems/medium/fastslowpointers) [(and tests)](src/test/java/problems/medium/fastslowpointers)
 - Merge Intervals
 - Cyclic Sort
 - In-place Reversal of a LinkedList
+  - [Easy problems](src/main/java/problems/easy/inplacereversal) [(and tests)](src/test/java/problems/easy/inplacereversal)
+  - [Medium problems](src/main/java/problems/medium/inplacereversal) [(and tests)](src/test/java/problems/medium/inplacereversal)
 - Tree Breadth First Search
+  - [Easy problems](src/main/java/problems/easy/breadthfirstsearch) [(and tests)](src/test/java/problems/easy/breadthfirstsearch)
+  - [Medium problems](src/main/java/problems/medium/breadthfirstsearch) [(and tests)](src/test/java/problems/medium/breadthfirstsearch)
 - Tree Depth First Search
+  - [Easy problems](src/main/java/problems/easy/depthfirstsearch) [(and tests)](src/test/java/problems/easy/depthfirstsearch)
+  - [Medium problems](src/main/java/problems/medium/depthfirstsearch) [(and tests)](src/test/java/problems/medium/depthfirstsearch)
 - Two Heaps
 - Subsets
 - Modified Binary Search
-- Bitwise XOR
+  - [Easy problems](src/main/java/problems/easy/modifiedbinarysearch) [(and tests)](src/test/java/problems/easy/modifiedbinarysearch)
+  - [Medium problems](src/main/java/problems/medium/modifiedbinarysearch) [(and tests)](src/test/java/problems/medium/modifiedbinarysearch)
+- Bit Manipulation (Bitwise XOR)
+  - [Easy problems](src/main/java/problems/easy/bitmanipulation) [(and tests)](src/test/java/problems/easy/bitmanipulation)
 - Top 'K' Elements
 - K-way merge
-- 0/1 Knapsack
-- Unbounded Knapsack
-- Fibonacci Numbers
-- Palindrome Subsequence
-- Longest Common Substring
+- Dynamic Programming
+  - [Easy problems](src/main/java/problems/easy/dynamicprogramming) [(and tests)](src/test/java/problems/easy/dynamicprogramming)
+  - [Medium problems](src/main/java/problems/medium/dynamicprogramming) [(and tests)](src/test/java/problems/medium/dynamicprogramming)
 - Topological Sort (Graph)
 - Kth Smallest Number
+- Disjoint Sets
+  - [Medium problems](src/main/java/problems/medium/disjointsets) [(and tests)](src/test/java/problems/medium/disjointsets)
+- Design
+  - [Easy problems](src/main/java/problems/easy/design) [(and tests)](src/test/java/problems/easy/design)
+  - [Medium problems](src/main/java/problems/medium/design) [(and tests)](src/test/java/problems/medium/design)
+- Uncategorized
+  - [Easy problems](src/main/java/problems/easy/uncategorized) [(and tests)](src/test/java/problems/easy/uncategorized)
+  - [Medium problems](src/main/java/problems/medium/uncategorized) [(and tests)](src/test/java/problems/medium/uncategorized)
+- SQL
+  - [Medium problems](documents/sql/SQLProblemSolutions.md)
+  
+## Implementations
+
+- [Data Structures, Sorting, Searching](src/main/java/implementations) [(and tests)](src/test/java/implementations)
