@@ -13,27 +13,61 @@ import static org.junit.jupiter.params.provider.Arguments.arguments;
 class LongestUnivaluePathTest {
   static Stream<Arguments> source() {
     return Stream.of(
-        arguments(new Integer[] {5, 4, 5, 1, 1, 5}, 2),
-        arguments(new Integer[] {1, 4, 5, 4, 4, 5}, 2),
-        arguments(new Integer[] {1}, 0),
-        arguments(new Integer[] {1, 2}, 0),
-        arguments(new Integer[] {1, 2, 2, 2, 2, 2}, 2));
+        arguments(createCase1Tree(), 2),
+        arguments(createCase2Tree(), 2),
+        arguments(createCase3Tree(), 0),
+        arguments(createCase4Tree(), 0),
+        arguments(createCase5Tree(), 2));
   }
 
-  private LongestUnivaluePath.TreeNode arrayToTree(Integer[] input, int i) {
-    if (i >= input.length || input[i] == null) return null;
+  private static CountUnivalueSubtrees.TreeNode createCase1Tree() {
+    CountUnivalueSubtrees top = new CountUnivalueSubtrees();
+    CountUnivalueSubtrees.TreeNode root = top.new TreeNode(5);
+    root.left = top.new TreeNode(4);
+    root.left.left = top.new TreeNode(1);
+    root.left.right = top.new TreeNode(1);
+    root.right = top.new TreeNode(5);
+    root.right.right = top.new TreeNode(5);
+    return root;
+  }
 
-    var leftNode = arrayToTree(input, i * 2 + 1);
-    var rightNode = arrayToTree(input, i * 2 + 2);
+  private static CountUnivalueSubtrees.TreeNode createCase2Tree() {
+    CountUnivalueSubtrees top = new CountUnivalueSubtrees();
+    CountUnivalueSubtrees.TreeNode root = top.new TreeNode(1);
+    root.left = top.new TreeNode(4);
+    root.left.left = top.new TreeNode(4);
+    root.left.right = top.new TreeNode(4);
+    root.right = top.new TreeNode(5);
+    root.right.right = top.new TreeNode(5);
+    return root;
+  }
 
-    return new LongestUnivaluePath().new TreeNode(input[i], leftNode, rightNode);
+  private static CountUnivalueSubtrees.TreeNode createCase3Tree() {
+    CountUnivalueSubtrees top = new CountUnivalueSubtrees();
+    return top.new TreeNode(1);
+  }
+
+  private static CountUnivalueSubtrees.TreeNode createCase4Tree() {
+    CountUnivalueSubtrees top = new CountUnivalueSubtrees();
+    CountUnivalueSubtrees.TreeNode root = top.new TreeNode(1);
+    root.left = top.new TreeNode(2);
+    return root;
+  }
+
+  private static CountUnivalueSubtrees.TreeNode createCase5Tree() {
+    CountUnivalueSubtrees top = new CountUnivalueSubtrees();
+    CountUnivalueSubtrees.TreeNode root = top.new TreeNode(1);
+    root.left = top.new TreeNode(2);
+    root.left.left = top.new TreeNode(2);
+    root.left.right = top.new TreeNode(2);
+    root.right = top.new TreeNode(2);
+    root.right.left = top.new TreeNode(2);
+    return root;
   }
 
   @ParameterizedTest
   @MethodSource("source")
-  public void positiveTest(Integer[] input, int expected) {
-    var root = arrayToTree(input, 0);
-
+  public void positiveTest(LongestUnivaluePath.TreeNode root, int expected) {
     int actual =
         Assertions.assertTimeoutPreemptively(
             Duration.ofMillis(50), () -> new LongestUnivaluePath().longestUnivaluePath(root));

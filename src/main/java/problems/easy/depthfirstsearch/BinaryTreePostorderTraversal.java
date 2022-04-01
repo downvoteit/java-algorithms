@@ -9,6 +9,8 @@ public class BinaryTreePostorderTraversal {
     return new V1().postorderTraversal(root);
   }
 
+  // time O(n) space O(n)
+  // DFS, recursive, postorder
   static class V1 extends BinaryTreePostorderTraversal {
     public List<Integer> postorderTraversal(TreeNode root) {
       List<Integer> visited = new ArrayList<>();

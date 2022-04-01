@@ -15,28 +15,33 @@ import static org.junit.jupiter.params.provider.Arguments.arguments;
 class AverageOfLevelsInBinaryTreeTest {
   static Stream<Arguments> source() {
     return Stream.of(
-        arguments(
-            new Integer[] {3, 9, 20, null, null, 15, 7},
-            new Double[] {3.00000, 14.50000, 11.00000}),
-        arguments(new Integer[] {3, 9, 20, 15, 7}, new Double[] {3.00000, 14.50000, 11.00000}));
+        arguments(createCase1Tree(), new Double[] {3.00000, 14.50000, 11.00000}),
+        arguments(createCase2Tree(), new Double[] {3.00000, 14.50000, 11.00000}));
   }
 
-  private AverageOfLevelsInBinaryTree.TreeNode arrayToTree(Integer[] input, int i) {
-    if (i >= input.length || input[i] == null) return null;
+  private static AverageOfLevelsInBinaryTree.TreeNode createCase1Tree() {
+    AverageOfLevelsInBinaryTree top = new AverageOfLevelsInBinaryTree();
+    AverageOfLevelsInBinaryTree.TreeNode root = top.new TreeNode(3);
+    root.left = top.new TreeNode(9);
+    root.right = top.new TreeNode(20);
+    root.right.left = top.new TreeNode(15);
+    root.right.right = top.new TreeNode(7);
+    return root;
+  }
 
-    var leftNode = arrayToTree(input, i * 2 + 1);
-    var rightNode = arrayToTree(input, i * 2 + 2);
-
-    return new AverageOfLevelsInBinaryTree().new TreeNode(input[i], leftNode, rightNode);
+  private static AverageOfLevelsInBinaryTree.TreeNode createCase2Tree() {
+    AverageOfLevelsInBinaryTree top = new AverageOfLevelsInBinaryTree();
+    AverageOfLevelsInBinaryTree.TreeNode root = top.new TreeNode(3);
+    root.left = top.new TreeNode(9);
+    root.left.left = top.new TreeNode(15);
+    root.left.right = top.new TreeNode(7);
+    root.right = top.new TreeNode(20);
+    return root;
   }
 
   @ParameterizedTest
   @MethodSource("source")
-  public void positiveTest(Integer[] input, Double[] expected) {
-    var root = arrayToTree(input, 0);
-
-    System.out.println(root);
-
+  public void positiveTest(AverageOfLevelsInBinaryTree.TreeNode root, Double[] expected) {
     List<Double> actualValue =
         Assertions.assertTimeoutPreemptively(
             Duration.ofMillis(50), () -> new AverageOfLevelsInBinaryTree().averageOfLevels(root));

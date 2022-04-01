@@ -9,6 +9,8 @@ public class BinaryTreePreorderTraversal {
     return new V1().preorderTraversal(root);
   }
 
+  // time O(n) space O(n)
+  // DFS, recursive, preorder
   static class V1 extends BinaryTreePreorderTraversal {
     public List<Integer> preorderTraversal(TreeNode root) {
       List<Integer> visited = new ArrayList<>();
@@ -46,7 +48,13 @@ public class BinaryTreePreorderTraversal {
 
     @Override
     public String toString() {
-      return "{" + "v=" + val + ", l=" + left + ", r=" + right + '}';
+      return "{"
+          + val
+          + ", l:"
+          + (left == null ? "" : left)
+          + ", r:"
+          + (right == null ? "" : right)
+          + '}';
     }
   }
 }

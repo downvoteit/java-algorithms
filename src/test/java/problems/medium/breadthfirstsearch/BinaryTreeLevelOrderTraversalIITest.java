@@ -16,26 +16,33 @@ import static org.junit.jupiter.params.provider.Arguments.arguments;
 class BinaryTreeLevelOrderTraversalIITest {
   static Stream<Arguments> source() {
     return Stream.of(
-        arguments(
-            new Integer[] {3, 9, 20, null, null, 15, 7}, new Integer[][] {{15, 7}, {9, 20}, {3}}),
-        arguments(new Integer[] {1}, new Integer[][] {{1}}),
-        arguments(new Integer[] {}, new Integer[][] {}));
+        arguments(createCase1Tree(), new Integer[][] {{15, 7}, {9, 20}, {3}}),
+        arguments(createCase2Tree(), new Integer[][] {{1}}),
+        arguments(createCase3Tree(), new Integer[][] {}));
   }
 
-  private BinaryTreeLevelOrderTraversalII.TreeNode arrayToTree(Integer[] input, int i) {
-    if (i >= input.length || input[i] == null) return null;
+  private static BinaryTreeLevelOrderTraversalII.TreeNode createCase1Tree() {
+    BinaryTreeLevelOrderTraversalII top = new BinaryTreeLevelOrderTraversalII();
+    BinaryTreeLevelOrderTraversalII.TreeNode root = top.new TreeNode(3);
+    root.left = top.new TreeNode(9);
+    root.right = top.new TreeNode(20);
+    root.right.left = top.new TreeNode(15);
+    root.right.right = top.new TreeNode(7);
+    return root;
+  }
 
-    var leftNode = arrayToTree(input, i * 2 + 1);
-    var rightNode = arrayToTree(input, i * 2 + 2);
+  private static BinaryTreeLevelOrderTraversalII.TreeNode createCase2Tree() {
+    BinaryTreeLevelOrderTraversalII top = new BinaryTreeLevelOrderTraversalII();
+    return top.new TreeNode(1);
+  }
 
-    return new BinaryTreeLevelOrderTraversalII().new TreeNode(input[i], leftNode, rightNode);
+  private static BinaryTreeLevelOrderTraversalII.TreeNode createCase3Tree() {
+    return null;
   }
 
   @ParameterizedTest
   @MethodSource("source")
-  public void positiveTest(Integer[] input, Integer[][] expected) {
-    var root = arrayToTree(input, 0);
-
+  public void positiveTest(BinaryTreeLevelOrderTraversalII.TreeNode root, Integer[][] expected) {
     List<List<Integer>> actualValue =
         Assertions.assertTimeoutPreemptively(
             Duration.ofMillis(50),

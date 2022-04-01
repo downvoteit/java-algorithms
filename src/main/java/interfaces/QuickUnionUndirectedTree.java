@@ -1,4 +1,4 @@
-package implementations;
+package interfaces;
 
 public interface QuickUnionUndirectedTree {
   int find(int vertex);

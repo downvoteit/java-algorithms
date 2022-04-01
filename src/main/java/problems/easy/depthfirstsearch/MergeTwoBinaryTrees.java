@@ -1,4 +1,4 @@
-package problems.easy.unsolved;
+package problems.easy.depthfirstsearch;
 
 // https://leetcode.com/problems/merge-two-binary-trees/
 public class MergeTwoBinaryTrees {
@@ -21,6 +21,17 @@ public class MergeTwoBinaryTrees {
       this.val = val;
       this.left = left;
       this.right = right;
+    }
+
+    @Override
+    public String toString() {
+      return "{"
+          + val
+          + ", l:"
+          + (left == null ? "" : left)
+          + ", r:"
+          + (right == null ? "" : right)
+          + '}';
     }
   }
 }

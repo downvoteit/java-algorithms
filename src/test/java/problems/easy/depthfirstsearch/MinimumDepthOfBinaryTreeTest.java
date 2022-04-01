@@ -1,50 +1,47 @@
 package problems.easy.depthfirstsearch;
 
 import org.junit.jupiter.api.Assertions;
-import org.junit.jupiter.api.Test;
+import org.junit.jupiter.params.ParameterizedTest;
+import org.junit.jupiter.params.provider.Arguments;
+import org.junit.jupiter.params.provider.MethodSource;
 
 import java.time.Duration;
+import java.util.stream.Stream;
+
+import static org.junit.jupiter.params.provider.Arguments.arguments;
 
 class MinimumDepthOfBinaryTreeTest {
-  @Test
-  public void positiveTestOne() {
-    var top = new MinimumDepthOfBinaryTree();
+  static Stream<Arguments> source() {
+    return Stream.of(arguments(createCase1Tree(), 2), arguments(createCase2Tree(), 5));
+  }
 
-    // 3(P),
-    // 9(L), 20(R),
-    // null(L), null(R), 15(L), 7(R)
-    var root = top.new TreeNode(3);
+  private static MinimumDepthOfBinaryTree.TreeNode createCase1Tree() {
+    MinimumDepthOfBinaryTree top = new MinimumDepthOfBinaryTree();
+    MinimumDepthOfBinaryTree.TreeNode root = top.new TreeNode(3);
     root.left = top.new TreeNode(9);
     root.right = top.new TreeNode(20);
     root.right.left = top.new TreeNode(15);
     root.right.right = top.new TreeNode(7);
-
-    int actual =
-        Assertions.assertTimeoutPreemptively(
-            Duration.ofMillis(50), () -> new MinimumDepthOfBinaryTree().minDepth(root));
-
-    Assertions.assertEquals(2, actual);
+    return root;
   }
 
-  @Test
-  public void positiveTestTwo() {
-    var top = new MinimumDepthOfBinaryTree();
-
-    // 2(P),
-    // null(L), 3(R),
-    // null(L), 4(R),
-    // null(L), 5(R),
-    // null(L), 6(R)
-    var root = top.new TreeNode(2);
+  private static MinimumDepthOfBinaryTree.TreeNode createCase2Tree() {
+    MinimumDepthOfBinaryTree top = new MinimumDepthOfBinaryTree();
+    MinimumDepthOfBinaryTree.TreeNode root = top.new TreeNode(2);
     root.right = top.new TreeNode(3);
     root.right.right = top.new TreeNode(4);
     root.right.right.right = top.new TreeNode(5);
     root.right.right.right.right = top.new TreeNode(6);
+    return root;
+  }
 
+  @ParameterizedTest
+  @MethodSource("source")
+  public void positiveTest(MinimumDepthOfBinaryTree.TreeNode root, int expected) {
     int actual =
         Assertions.assertTimeoutPreemptively(
             Duration.ofMillis(50), () -> new MinimumDepthOfBinaryTree().minDepth(root));
 
-    Assertions.assertEquals(5, actual);
+    Assertions.assertEquals(expected, actual);
   }
 }

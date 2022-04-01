@@ -13,29 +13,44 @@ import static org.junit.jupiter.params.provider.Arguments.arguments;
 class DiameterOfBinaryTreeTest {
   static Stream<Arguments> source() {
     return Stream.of(
-        arguments(new Integer[] {1, 2, 3, 4, 5}, 3),
-        arguments(new Integer[] {1, 2, 3, 4, 5}, 3),
-        arguments(new Integer[] {1, 2}, 1),
-        arguments(new Integer[] {1}, 0),
-        arguments(new Integer[] {1, null, 2}, 1));
+        arguments(createCase1Tree(), 3),
+        arguments(createCase2Tree(), 1),
+        arguments(createCase3Tree(), 0),
+        arguments(createCase4Tree(), 1));
   }
 
-  private DiameterOfBinaryTree.TreeNode arrayToTree(Integer[] input, int i) {
-    if (i >= input.length) return null;
+  private static DiameterOfBinaryTree.TreeNode createCase1Tree() {
+    DiameterOfBinaryTree top = new DiameterOfBinaryTree();
+    DiameterOfBinaryTree.TreeNode root = top.new TreeNode(1);
+    root.left = top.new TreeNode(2);
+    root.left.left = top.new TreeNode(4);
+    root.left.right = top.new TreeNode(5);
+    root.right = top.new TreeNode(3);
+    return root;
+  }
 
-    var leftNode = arrayToTree(input, i * 2 + 1);
-    var rightNode = arrayToTree(input, i * 2 + 2);
+  private static DiameterOfBinaryTree.TreeNode createCase2Tree() {
+    DiameterOfBinaryTree top = new DiameterOfBinaryTree();
+    DiameterOfBinaryTree.TreeNode root = top.new TreeNode(1);
+    root.left = top.new TreeNode(2);
+    return root;
+  }
 
-    if (input[i] == null) return new DiameterOfBinaryTree().new TreeNode();
+  private static DiameterOfBinaryTree.TreeNode createCase3Tree() {
+    DiameterOfBinaryTree top = new DiameterOfBinaryTree();
+    return top.new TreeNode(1);
+  }
 
-    return new DiameterOfBinaryTree().new TreeNode(input[i], leftNode, rightNode);
+  private static DiameterOfBinaryTree.TreeNode createCase4Tree() {
+    DiameterOfBinaryTree top = new DiameterOfBinaryTree();
+    DiameterOfBinaryTree.TreeNode root = top.new TreeNode(1);
+    root.right = top.new TreeNode(2);
+    return root;
   }
 
   @ParameterizedTest
   @MethodSource("source")
-  public void positiveTest(Integer[] input, int expected) {
-    var root = arrayToTree(input, 0);
-
+  public void positiveTest(DiameterOfBinaryTree.TreeNode root, int expected) {
     int actual =
         Assertions.assertTimeoutPreemptively(
             Duration.ofMillis(50), () -> new DiameterOfBinaryTree().diameterOfBinaryTree(root));

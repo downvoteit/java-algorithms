@@ -42,5 +42,16 @@ public class CountUnivalueSubtrees {
       this.left = left;
       this.right = right;
     }
+
+    @Override
+    public String toString() {
+      return "{"
+          + val
+          + ", l:"
+          + (left == null ? "" : left)
+          + ", r:"
+          + (right == null ? "" : right)
+          + '}';
+    }
   }
 }

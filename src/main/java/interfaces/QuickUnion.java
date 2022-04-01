@@ -1,4 +1,4 @@
-package implementations;
+package interfaces;
 
 public interface QuickUnion {
   int find(int vertex);

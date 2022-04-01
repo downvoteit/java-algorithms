@@ -43,7 +43,13 @@ public class SymmetricTree {
 
     @Override
     public String toString() {
-      return "{" + "v=" + val + ", l=" + left + ", r=" + right + '}';
+      return "{"
+          + val
+          + ", l:"
+          + (left == null ? "" : left)
+          + ", r:"
+          + (right == null ? "" : right)
+          + '}';
     }
   }
 }

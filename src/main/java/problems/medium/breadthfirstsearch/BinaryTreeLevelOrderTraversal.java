@@ -60,9 +60,16 @@ public class BinaryTreeLevelOrderTraversal {
       this.left = left;
       this.right = right;
     }
+
     @Override
     public String toString() {
-      return "{" + "v=" + val + ", l=" + left + ", r=" + right + '}';
+      return "{"
+          + val
+          + ", l:"
+          + (left == null ? "" : left)
+          + ", r:"
+          + (right == null ? "" : right)
+          + '}';
     }
   }
 }

@@ -12,24 +12,33 @@ import static org.junit.jupiter.params.provider.Arguments.arguments;
 
 class UnivaluedBinaryTreeTest {
   static Stream<Arguments> source() {
-    return Stream.of(
-        arguments(new Integer[] {1, 1, 1, 1, 1, null, 1}, true),
-        arguments(new Integer[] {2, 2, 2, 5, 2}, false));
+    return Stream.of(arguments(createCase1Tree(), true), arguments(createCase2Tree(), false));
   }
 
-  private UnivaluedBinaryTree.TreeNode arrayToTree(Integer[] input, int i) {
-    if (i >= input.length || input[i] == null) return null;
+  private static UnivaluedBinaryTree.TreeNode createCase1Tree() {
+    UnivaluedBinaryTree top = new UnivaluedBinaryTree();
+    UnivaluedBinaryTree.TreeNode root = top.new TreeNode(1);
+    root.left = top.new TreeNode(1);
+    root.left.left = top.new TreeNode(1);
+    root.left.right = top.new TreeNode(1);
+    root.right = top.new TreeNode(1);
+    root.right.right = top.new TreeNode(1);
+    return root;
+  }
 
-    var leftNode = arrayToTree(input, i * 2 + 1);
-    var rightNode = arrayToTree(input, i * 2 + 2);
-
-    return new UnivaluedBinaryTree().new TreeNode(input[i], leftNode, rightNode);
+  private static UnivaluedBinaryTree.TreeNode createCase2Tree() {
+    UnivaluedBinaryTree top = new UnivaluedBinaryTree();
+    UnivaluedBinaryTree.TreeNode root = top.new TreeNode(2);
+    root.left = top.new TreeNode(2);
+    root.left.left = top.new TreeNode(5);
+    root.left.right = top.new TreeNode(2);
+    root.right = top.new TreeNode(2);
+    return root;
   }
 
   @ParameterizedTest
   @MethodSource("source")
-  public void positiveTest(Integer[] input, boolean expected) {
-    var root = arrayToTree(input, 0);
+  public void positiveTest(UnivaluedBinaryTree.TreeNode root, boolean expected) {
 
     boolean actual =
         Assertions.assertTimeoutPreemptively(

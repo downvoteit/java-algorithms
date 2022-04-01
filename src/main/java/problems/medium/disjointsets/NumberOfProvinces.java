@@ -1,6 +1,6 @@
 package problems.medium.disjointsets;
 
-import implementations.QuickUnion;
+import interfaces.QuickUnion;
 
 // https://leetcode.com/problems/number-of-provinces/
 public class NumberOfProvinces {

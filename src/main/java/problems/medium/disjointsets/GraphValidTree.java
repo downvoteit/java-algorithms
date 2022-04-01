@@ -1,6 +1,6 @@
 package problems.medium.disjointsets;
 
-import implementations.QuickUnionUndirectedTree;
+import interfaces.QuickUnionUndirectedTree;
 
 // https://leetcode.com/problems/graph-valid-tree/
 public class GraphValidTree {

@@ -14,19 +14,27 @@ import static org.junit.jupiter.params.provider.Arguments.arguments;
 
 class BinaryTreePostorderTraversalTest {
   static Stream<Arguments> source() {
-    var outer = new BinaryTreePostorderTraversal();
-
-    BinaryTreePostorderTraversal.TreeNode root1 = outer.new TreeNode(1);
-    root1.right = outer.new TreeNode(2);
-    root1.right.left = outer.new TreeNode(3);
-
-    BinaryTreePostorderTraversal.TreeNode root2 = null;
-    BinaryTreePostorderTraversal.TreeNode root3 = outer.new TreeNode(1);
-
     return Stream.of(
-        arguments(root1, new Integer[] {3, 2, 1}),
-        arguments(root2, new Integer[] {}),
-        arguments(root3, new Integer[] {1}));
+        arguments(createCase1Tree(), new Integer[] {3, 2, 1}),
+        arguments(createCase2Tree(), new Integer[] {}),
+        arguments(createCase3Tree(), new Integer[] {1}));
+  }
+
+  private static BinaryTreePostorderTraversal.TreeNode createCase1Tree() {
+    BinaryTreePostorderTraversal top = new BinaryTreePostorderTraversal();
+    BinaryTreePostorderTraversal.TreeNode root = top.new TreeNode(1);
+    root.right = top.new TreeNode(2);
+    root.right.left = top.new TreeNode(3);
+    return root;
+  }
+
+  private static BinaryTreePostorderTraversal.TreeNode createCase2Tree() {
+    return null;
+  }
+
+  private static BinaryTreePostorderTraversal.TreeNode createCase3Tree() {
+    BinaryTreePostorderTraversal top = new BinaryTreePostorderTraversal();
+    return top.new TreeNode(1);
   }
 
   @ParameterizedTest

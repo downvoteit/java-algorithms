@@ -64,7 +64,13 @@ public class LongestUnivaluePath {
 
     @Override
     public String toString() {
-      return "" + val;
+      return "{"
+          + val
+          + ", l:"
+          + (left == null ? "" : left)
+          + ", r:"
+          + (right == null ? "" : right)
+          + '}';
     }
   }
 }
