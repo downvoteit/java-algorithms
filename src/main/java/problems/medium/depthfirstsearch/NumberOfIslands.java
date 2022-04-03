@@ -1,4 +1,4 @@
-package problems.medium.disjointsets;
+package problems.medium.depthfirstsearch;
 
 // https://leetcode.com/problems/number-of-islands/
 public class NumberOfIslands {
@@ -21,7 +21,6 @@ public class NumberOfIslands {
 
       for (int i = 0; i < rows; i++)
         for (int j = 0; j < columns; j++) {
-
           if (edges[i][j] == '0') continue; // continue on water
 
           dfs(i, j);
