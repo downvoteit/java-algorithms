@@ -28,7 +28,8 @@ class NumberOfIslandsTest {
               {'0', '0', '1', '0', '0'},
               {'0', '0', '0', '1', '1'}
             },
-            3));
+            3),
+        arguments(new char[][] {{'1', '0', '1', '1', '0', '1', '1'}}, 3));
   }
 
   @ParameterizedTest
@@ -36,7 +37,7 @@ class NumberOfIslandsTest {
   public void positiveTest(char[][] grid, int expected) {
     int actual =
         Assertions.assertTimeoutPreemptively(
-            Duration.ofMillis(50), () -> new NumberOfIslands().numIslands(grid));
+            Duration.ofMillis(150), () -> new NumberOfIslands().numIslands(grid));
 
     Assertions.assertEquals(expected, actual);
   }
