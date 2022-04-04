@@ -10,7 +10,7 @@ public class SwappingNodesInALinkedList {
   }
 
   // time O(n) space O(n)
-  // plain and dumb, follow should perform the swap in-place
+  // plain and dumb, follow-up should perform the swap in-place
   static class V1 extends SwappingNodesInALinkedList {
     public ListNode swapNodes(ListNode head, int k) {
       List<Integer> list = new ArrayList<>();
