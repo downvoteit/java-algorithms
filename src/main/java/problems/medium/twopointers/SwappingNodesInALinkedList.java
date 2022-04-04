@@ -1,4 +1,4 @@
-package problems.medium.fastslowpointers;
+package problems.medium.twopointers;
 
 import java.util.ArrayList;
 import java.util.List;

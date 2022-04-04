@@ -1,4 +1,4 @@
-package problems.medium.fastslowpointers;
+package problems.medium.twopointers;
 
 import converters.StringToIntArray;
 import org.junit.jupiter.api.Assertions;
